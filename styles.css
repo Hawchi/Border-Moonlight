@@ -1,0 +1,288 @@
+/* =========================================================
+   K-REPLAY · Global Styles
+   - Cleaned & organized CSS
+   - Dark luxury look + Pink Moon behind content
+   ========================================================= */
+
+/* -----------------------------
+   1) Design tokens (CSS vars)
+----------------------------- */
+:root{
+  --bg:#0a0a0b;
+  --bg-2:#141417;
+  --ink:#e8e8ec;
+  --muted:#a8a8b3;
+
+  --accent:#cfd2d8;
+  --accent-2:#b1b6c0;
+
+  --line:rgba(255,255,255,.08);
+  --glass:rgba(255,255,255,.04);
+
+  --blur:14px;
+  --radius:18px;
+  --shadow:0 10px 30px rgba(0,0,0,.55);
+}
+
+/* -----------------------------
+   2) Base & Reset
+----------------------------- */
+*{ box-sizing:border-box; }
+html, body{ height:100%; }
+
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  letter-spacing:.1px;
+  overflow-x:hidden;
+
+  /* Dark luxury background stack */
+  background:
+    radial-gradient(1000px 800px at 20% 10%, #101015 0%, var(--bg) 55%),
+    radial-gradient(900px 700px at 80% 0%, #0f0f13 0%, var(--bg) 60%),
+    linear-gradient(180deg, #0b0b0e 0%, #0a0a0b 100%);
+}
+
+/* Smooth scrolling (respect user preference) */
+@media (prefers-reduced-motion: no-preference){
+  html { scroll-behavior:smooth; }
+}
+
+/* -----------------------------
+   3) Layout utilities
+----------------------------- */
+.container{ width:min(1180px,92vw); margin-inline:auto; }
+.section{ position:relative; z-index:2; padding:72px 0; }
+.row{ display:flex; gap:28px; flex-wrap:wrap; }
+.align-center{ align-items:center; }
+.col{ flex:1 1 420px; min-width:280px; }
+
+.mt-0{ margin-top:0; }
+.mt-16{ margin-top:16px; }
+.mb-12{ margin-bottom:12px; }
+
+.eyebrow{
+  font-size:.72rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.bullets{
+  margin:0;
+  padding:0 0 0 16px;
+  line-height:1.9;
+  color:var(--muted);
+}
+
+/* -----------------------------
+   4) Navigation (frosted)
+----------------------------- */
+header.nav{
+  position:fixed; inset:0 0 auto 0; height:70px; z-index:30;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg, rgba(10,10,11,.65), rgba(10,10,11,.25));
+  backdrop-filter:saturate(160%) blur(10px);
+}
+.nav__inner{ height:70px; display:flex; align-items:center; justify-content:space-between; }
+
+.logo{
+  font-family:'Prata', serif;
+  font-size:20px; line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.34em;
+  padding-left:2px; white-space:nowrap;
+  background:linear-gradient(100deg,#f5f7ff 10%,#aeb4c2 40%,#ffffff 60%,#8f95a3 90%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  filter:drop-shadow(0 0 .4px rgba(255,255,255,.35));
+}
+
+nav ul{ display:flex; gap:22px; list-style:none; margin:0; padding:0; }
+nav a{ color:var(--ink); font-size:.92rem; text-decoration:none; opacity:.86; }
+nav a:hover{ opacity:1; }
+
+.cta-btn{
+  padding:10px 16px; border-radius:999px;
+  color:var(--ink);
+  border:1px solid var(--accent-2);
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.01));
+  backdrop-filter:blur(6px);
+  box-shadow:var(--shadow);
+}
+
+/* -----------------------------
+   5) Hero
+----------------------------- */
+.hero{
+  position:relative; z-index:2;
+  min-height:82vh;
+  display:grid; place-items:center;
+  padding-top:70px; /* nav height */
+}
+
+/* Background image + dark overlay */
+.hero__bg{
+  position:absolute; inset:0; z-index:0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.4), rgba(0,0,0,.75)),
+    url('images/enhypen_hero.jpg') center/cover no-repeat;
+  filter:saturate(90%) contrast(95%);
+}
+
+/* Decorative sparkles (JS canvas) */
+#sparkles{
+  position:absolute; inset:0;
+  background:transparent;
+  pointer-events:none;
+}
+
+/* Content on top */
+.hero__content{ position:relative; z-index:2; text-align:center; padding:48px 16px; }
+.hero__kicker{ margin-bottom:16px; }
+
+.hero__title{
+  margin:0 0 18px;
+  font-family:'Prata', serif;
+  font-size:clamp(34px,7vw,86px);
+  text-transform:uppercase;
+  letter-spacing:.28em;
+
+  background:linear-gradient(90deg,#f7f8fb 0%,#c7ccd6 35%,#ffffff 50%,#b7bdc9 75%,#eef1f8 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  -webkit-text-stroke:.6px rgba(255,255,255,.3);
+}
+
+.hero__strap{ color:var(--muted); font-size:1.02rem; max-width:760px; margin-inline:auto; }
+
+.hero__actions{ margin-top:26px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+.btn{
+  padding:12px 18px; border-radius:12px;
+  color:var(--ink); text-decoration:none;
+  border:1px solid var(--accent-2);
+  background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+  box-shadow:var(--shadow);
+  transition:transform .2s ease, border-color .2s ease;
+}
+.btn:hover{ transform:translateY(-2px); border-color:#d9dde6; }
+
+/* -----------------------------
+   6) Cards, Lists, Grids
+----------------------------- */
+.card{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(var(--blur)) saturate(130%);
+}
+.about .card{ padding:28px; }
+.about h2, .section h2{
+  margin:0 0 10px;
+  font-family:'Prata', serif;
+  text-transform:uppercase; letter-spacing:.12em;
+}
+.about p{ margin:0; color:var(--muted); line-height:1.7; }
+
+/* Grid */
+.grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+@media (max-width:900px){ .grid-3{ grid-template-columns:1fr 1fr; } }
+@media (max-width:620px){ .grid-3{ grid-template-columns:1fr; } }
+
+/* Tiles */
+.tile{
+  position:relative; isolation:isolate;
+  min-height:260px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:#0d0d10; overflow:hidden;
+}
+.tile img{
+  position:absolute; inset:0;
+  width:100%; height:100%; object-fit:cover;
+  filter:grayscale(.2) contrast(1.05) brightness(.9);
+}
+.tile::after{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.65));
+}
+.tile__label{
+  position:absolute; inset:auto 0 0 0; z-index:2;
+  padding:18px; display:flex; align-items:flex-end; justify-content:space-between; gap:10px;
+}
+.tile__title{
+  font-family:'Prata', serif;
+  text-transform:uppercase; letter-spacing:.12em;
+}
+.chip{
+  font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+  padding:6px 10px; border:1px solid var(--accent-2);
+  border-radius:999px; background:rgba(255,255,255,.04);
+}
+
+/* List cards */
+.list-card{
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+}
+.list-card h3{
+  margin:0 0 6px;
+  font-family:'Prata', serif;
+  text-transform:uppercase; letter-spacing:.08em;
+}
+.list-card p{ margin:0; color:var(--muted); }
+
+/* -----------------------------
+   7) Footer
+----------------------------- */
+footer{
+  position:relative; z-index:2;
+  padding:48px 0 80px;
+  color:var(--muted);
+  border-top:1px solid var(--line);
+}
+footer .grid{
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+}
+
+/* -----------------------------
+   8) Vignette (optional)
+----------------------------- */
+.vignette{
+  position:fixed; inset:-10vmax; z-index:1;
+  background:radial-gradient(60% 60% at 50% 30%, rgba(0,0,0,0) 60%, rgba(0,0,0,.5) 100%);
+  pointer-events:none;
+}
+
+/* -----------------------------
+   9) Pink Moon (sharp, no blur)
+   Place in index.html just after <body>:
+   <div class="pinkmoon-bg" aria-hidden="true"></div>
+----------------------------- */
+.pinkmoon-bg{
+  position:fixed; inset:0; z-index:0;           /* behind all content */
+  background:
+    url('images/pink_moon.png') center 45% / min(78vmin, 780px) no-repeat;
+  background-color:#000;                         /* deep base */
+  filter:brightness(1.05) contrast(1.05);       /* subtle polish */
+  opacity:1;
+  pointer-events:none;
+}
+
+/* =========================================================
+   End
+   ========================================================= */
+
+
+
+   .nav a.is-active {
+  opacity: 1;
+  border-bottom: 1px solid var(--accent-2);
+  padding-bottom: 4px;
+}
+
+
