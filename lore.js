@@ -1,7 +1,5 @@
-// Minimal, safe JS: voortgang + actieve link + sterren
 
 (function(){
-  // Jaar
   const jaar = document.getElementById('jaar');
   if (jaar) jaar.textContent = new Date().getFullYear();
 
@@ -15,7 +13,6 @@
   document.addEventListener('scroll', updateProgress, { passive:true });
   updateProgress();
 
-  // Actieve zijmenu-link met IntersectionObserver
   const secties = Array.from(document.querySelectorAll('.hoofdstuk'));
   const links = Array.from(document.querySelectorAll('.fases a'));
   const map = new Map(secties.map(s => ['#'+s.id, s.id]));
@@ -31,7 +28,6 @@
 
   if (io) secties.forEach(s => io.observe(s));
 
-  // Sterren (licht en performant)
   const canvas = document.getElementById('sterren');
   if (canvas){
     let ctx = canvas.getContext('2d', { alpha:true, desynchronized:true });

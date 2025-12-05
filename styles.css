@@ -1,11 +1,6 @@
-/* =========================================================
-   K-REPLAY · Global Styles
-   - Cleaned & organized CSS
-   - Dark luxury look + Pink Moon behind content
-   ========================================================= */
 
 /* -----------------------------
-   1) Design tokens (CSS vars)
+   1) 
 ----------------------------- */
 :root{
   --bg:#0a0a0b;
@@ -25,7 +20,7 @@
 }
 
 /* -----------------------------
-   2) Base & Reset
+   2) Base 
 ----------------------------- */
 *{ box-sizing:border-box; }
 html, body{ height:100%; }
@@ -37,14 +32,12 @@ body{
   letter-spacing:.1px;
   overflow-x:hidden;
 
-  /* Dark luxury background stack */
   background:
     radial-gradient(1000px 800px at 20% 10%, #101015 0%, var(--bg) 55%),
     radial-gradient(900px 700px at 80% 0%, #0f0f13 0%, var(--bg) 60%),
     linear-gradient(180deg, #0b0b0e 0%, #0a0a0b 100%);
 }
 
-/* Smooth scrolling (respect user preference) */
 @media (prefers-reduced-motion: no-preference){
   html { scroll-behavior:smooth; }
 }
@@ -121,7 +114,6 @@ nav a:hover{ opacity:1; }
   padding-top:70px; /* nav height */
 }
 
-/* Background image + dark overlay */
 .hero__bg{
   position:absolute; inset:0; z-index:0;
   background:
@@ -264,11 +256,11 @@ footer .grid{
    <div class="pinkmoon-bg" aria-hidden="true"></div>
 ----------------------------- */
 .pinkmoon-bg{
-  position:fixed; inset:0; z-index:0;           /* behind all content */
+  position:fixed; inset:0; z-index:0;          
   background:
     url('images/pink_moon.png') center 45% / min(78vmin, 780px) no-repeat;
-  background-color:#000;                         /* deep base */
-  filter:brightness(1.05) contrast(1.05);       /* subtle polish */
+  background-color:#000;                       
+  filter:brightness(1.05) contrast(1.05);       
   opacity:1;
   pointer-events:none;
 }

@@ -1,7 +1,7 @@
-// Year in footer
+// Jaar in footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Sparkle canvas
+// Sparkle 
 const canvas = document.getElementById('sparkles');
 const ctx = canvas.getContext('2d');
 let w, h, dpr, stars;

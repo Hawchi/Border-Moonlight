@@ -1,4 +1,4 @@
-// navbar.js
+
 class SiteNavbar extends HTMLElement {
   async connectedCallback() {
     const src = this.getAttribute("src") || "navbar.html";
@@ -22,11 +22,9 @@ class SiteNavbar extends HTMLElement {
 
     this.querySelectorAll("nav a").forEach(a => a.classList.remove("is-active"));
 
-    // Markeer actieve pagina
     const pageLink = this.querySelector(`nav a[href^="${currentPage}"]`);
     if (pageLink) pageLink.classList.add("is-active");
 
-    // Als we op index zitten, gebruik hash
     if (currentPage === "index.html" && currentHash) {
       const hashLink = this.querySelector(`nav a[href="index.html${currentHash}"]`);
       if (hashLink) {
