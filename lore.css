@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ===========================
    BORDER: MOONLIGHT · Lore
    Cinematic + Scrollytelling
@@ -680,3 +681,648 @@ figure.beeld[style*="M-concept.jpg"]::before {
   letter-spacing: 0.12em;
   z-index: 2;
 }
+=======
+/* ===========================
+   BORDER: MOONLIGHT · Lore
+   Cinematic + Scrollytelling
+   =========================== */
+
+:root{
+  --bg:#0a0a0b; --ink:#e8e8ec; --muted:#a8a8b3;
+  --accent:#cfd2d8; --accent-2:#b1b6c0;
+  --lijn:rgba(255,255,255,.10);
+  --glas:rgba(255,255,255,.04);
+  --radius:16px; --schaduw:0 10px 30px rgba(0,0,0,.55);
+}
+
+/* Base */
+*{ box-sizing:border-box }
+html,body{ height:100% }
+body{
+  margin:0; color:var(--ink);
+  font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  letter-spacing:.1px; background:
+    radial-gradient(1000px 800px at 20% 10%, #101015 0%, var(--bg) 55%),
+    radial-gradient(900px 700px at 80% 0%, #0f0f13 0%, var(--bg) 60%),
+    linear-gradient(180deg, #0b0b0e 0%, #0a0a0b 100%);
+  overflow-x:hidden;
+}
+@media (prefers-reduced-motion:no-preference){
+  html{ scroll-behavior:smooth }
+}
+
+/* Pink Moon (achter alles) */
+.maan-achtergrond{
+  position:fixed; inset:0; z-index:0;
+  background:#000 url('images/pink_moon.png') center 44% / clamp(340px, 70vmin, 960px) no-repeat;
+  pointer-events:none;
+}
+
+/* Voortgangsbalk */
+.voortgang{
+  position:fixed; inset:0 0 auto 0; height:3px; z-index:5;
+  background:linear-gradient(90deg, rgba(255,255,255,.08), transparent);
+}
+.voortgang .balk{
+  display:block; height:100%; width:0%;
+  background:linear-gradient(90deg, #f4e3ff, #c2c7d6);
+}
+
+/* Navigatie */
+.navigatie{
+  position:sticky; top:0; z-index:6;
+  background:linear-gradient(180deg, rgba(10,10,11,.70), rgba(10,10,11,.30));
+  border-bottom:1px solid var(--lijn);
+  backdrop-filter:saturate(160%) blur(8px);
+}
+.navigatie .inhoud{
+  width:min(1200px,92vw); margin-inline:auto;
+  height:66px; display:flex; align-items:center; justify-content:space-between;
+}
+.merk{
+  text-decoration:none; color:var(--ink);
+  font-family:'Prata',serif; text-transform:uppercase; letter-spacing:.22em; font-size:18px;
+}
+.menu a{
+  color:var(--ink); text-decoration:none; opacity:.85; margin-left:18px; font-size:.95rem;
+}
+.menu a[aria-current="page"]{ opacity:1; border-bottom:1px solid var(--accent-2); padding-bottom:4px }
+
+/* HERO */
+.kop{ position:relative; min-height:60vh; display:grid; place-items:center; }
+.kop .inhoud{ text-align:center; padding:76px 16px 48px; width:min(900px, 90vw); margin-inline:auto; z-index:2; }
+.kop-eyebrow{ text-transform:uppercase; letter-spacing:.22em; color:var(--muted); font-size:.8rem; margin:0 0 10px }
+.kop-titel{
+  margin:0 0 10px; font-family:'Prata',serif;
+  letter-spacing:.18em; text-transform:uppercase; font-size:clamp(34px,6.6vw,72px);
+  background:linear-gradient(100deg,#f7f8fb 10%,#c7ccd6 40%,#ffffff 60%,#b7bdc9 85%,#eef1f8 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  -webkit-text-stroke:.5px rgba(255,255,255,.28);
+}
+.kop-sub{ color:var(--muted); max-width:760px; margin:0 auto; line-height:1.7 }
+#sterren{ position:absolute; inset:0; background:transparent; pointer-events:none; z-index:1 }
+.kop .glow{
+  position:absolute; inset:auto 0 0 0; height:40%;
+  background:radial-gradient(60% 80% at 50% 0%, rgba(255,150,200,.20), rgba(255,150,200,0) 70%);
+  filter:blur(18px); z-index:0;
+}
+
+/* LAYOUT */
+.layout{ width:min(1200px,92vw); margin-inline:auto; display:grid; grid-template-columns:280px 1fr; gap:28px; position:relative; z-index:2; padding:18px 0 64px }
+@media (max-width:980px){ .layout{ grid-template-columns:1fr } }
+
+/* Zijmenu */
+.zijmenu{ position:sticky; top:78px; align-self:start; display:block; }
+.zijmenu-titel{ margin:0 0 10px; font-family:'Prata',serif; letter-spacing:.12em; text-transform:uppercase; font-size:1rem }
+.fases{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px }
+.fases a{
+  display:block; text-decoration:none; color:var(--ink); opacity:.75; padding:10px 12px;
+  border:1px solid transparent; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+}
+.fases a:hover{ opacity:1; border-color:var(--accent-2) }
+.fases a.actief{ opacity:1; border-color:var(--accent-2); background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)) }
+
+/* Verhalen */
+.verhalen{ display:flex; flex-direction:column; gap:40px }
+
+/* Hoofdstuk banner */
+.hoofdstuk{ border:1px solid var(--lijn); border-radius:16px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); box-shadow:var(--schaduw) }
+.hoofdstuk-banner{
+  position:relative; height:38vmin; min-height:280px; max-height:520px; isolation:isolate;
+  background: var(--bg);
+}
+.hoofdstuk-banner::before{
+  /* beeldlaag */
+  content:""; position:absolute; inset:0;
+  background: var(--beeld) center/cover no-repeat;
+  filter:saturate(88%) contrast(1.05) brightness(.92);
+  /* zachte fade naar onderen → mask */
+  -webkit-mask-image:linear-gradient(to bottom, black 65%, transparent 100%);
+          mask-image:linear-gradient(to bottom, black 65%, transparent 100%);
+}
+.hoofdstuk-banner::after{
+  /* roze gloed in de lucht */
+  content:""; position:absolute; inset:0;
+  background:radial-gradient(60% 60% at 50% 25%, rgba(255,150,200,.20), transparent 60%);
+  mix-blend-mode:screen; pointer-events:none;
+}
+.hoofdstuk-kop{
+  position:absolute; inset:auto 0 0 0; padding:20px 22px;
+  display:flex; align-items:flex-end; gap:12px;
+  background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.55));
+}
+.badge{
+  display:inline-block; border:1px solid var(--accent-2); border-radius:999px;
+  padding:6px 10px; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase;
+  background:rgba(255,255,255,.04); color:var(--ink);
+}
+.hoofdstuk-titel{
+  margin:0; font-family:'Prata',serif; text-transform:uppercase; letter-spacing:.14em;
+  font-size:clamp(20px,4.8vw,34px)
+}
+
+/* Verhaalblok */
+.verhaal{ padding:20px 22px 24px; }
+.inleidend{ margin:0 0 14px; color:var(--ink); line-height:1.8 }
+.dropcap{
+  float:left; font-family:'Prata',serif; font-size:3.2rem; line-height:.9;
+  margin:.12rem .6rem 0 0; color:#f1e9fb; text-shadow:0 2px 18px rgba(255,150,200,.25);
+}
+.citaat{
+  margin:16px 0; padding:14px 16px; border-left:3px solid var(--accent-2);
+  color:#e9ebf4; background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border-radius:12px;
+}
+.symbolen{ display:flex; flex-wrap:wrap; gap:10px; padding:0; margin:12px 0 8px; list-style:none }
+.symbolen li{
+  padding:6px 10px; border:1px solid var(--accent-2); border-radius:999px;
+  background:rgba(255,255,255,.04); font-size:.8rem; color:var(--ink);
+}
+
+/* Media blokken */
+.media-grid{
+  display:grid; gap:12px; grid-template-columns:repeat(2,1fr); margin:14px 0 4px;
+}
+@media (max-width:760px){ .media-grid{ grid-template-columns:1fr } }
+
+.beeld{
+  height:220px; border-radius:14px; overflow:hidden; border:1px solid var(--lijn);
+  background: var(--glas);
+  position:relative;
+}
+.beeld::before{ content:""; position:absolute; inset:0; background: var(--src) center/cover no-repeat; filter:saturate(92%) contrast(1.05) }
+.beeld figcaption{
+  position:absolute; right:8px; bottom:8px; padding:6px 10px; border-radius:10px;
+  font-size:.75rem; background:rgba(0,0,0,.45); border:1px solid rgba(255,255,255,.12)
+}
+
+.media-breed{
+  height:34vmin; min-height:220px; border-radius:14px; border:1px solid var(--lijn);
+  background: var(--src) center/cover no-repeat; margin:14px 0 2px;
+  -webkit-mask-image:linear-gradient(to bottom, black 82%, transparent 100%);
+          mask-image:linear-gradient(to bottom, black 82%, transparent 100%);
+}
+
+/* Volgende CTA */
+.volgend-hoofdstuk{
+  display:inline-block; margin-top:14px; text-decoration:none; color:var(--ink);
+  border:1px solid var(--accent-2); border-radius:12px; padding:10px 14px;
+  background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+}
+.volgend-hoofdstuk:hover{ border-color:#d9dde6 }
+
+/* Voet */
+.voet{ border-top:1px solid var(--lijn); padding:30px 0 60px; position:relative; z-index:2 }
+.voet .inhoud{ width:min(1200px,92vw); margin-inline:auto; display:flex; align-items:center; justify-content:space-between }
+
+/* Toegankelijkheid */
+@media (prefers-reduced-motion:reduce){
+  *{ animation:none !important; transition:none !important }
+}
+
+body .maan-achtergrond { display: none !important; }
+
+.kop::before{
+  content:"";
+  position:absolute; 
+  inset:0;
+  background: url('images/pink_moon.png') center 55% / min(38vmin, 420px) no-repeat;
+  opacity:.22;
+  filter:saturate(.9) contrast(1.05);
+  pointer-events:none;
+}
+
+
+.kop .glow{
+  background: radial-gradient(60% 80% at 50% 0%, rgba(255,150,200,.12), rgba(255,150,200,0) 70%);
+  filter: blur(14px);
+}
+
+
+/* --- Info- & conceptblokken (zelfde glass look als hoofdstuk) --- */
+.info-blok{
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border: 1px solid var(--lijn);
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: var(--schaduw);
+  margin: 16px 0;
+}
+.info-blok h3{
+  margin: 0 0 10px;
+  font-family:'Prata',serif;
+  text-transform: uppercase;
+  letter-spacing:.12em;
+}
+
+.info-lijst{list-style:none;margin:0;padding:0;color:var(--muted);line-height:1.75}
+.info-lijst li{margin:6px 0}
+.info-lijst li span{
+  display:inline-block; min-width:120px; color:var(--ink); opacity:.95;
+  text-transform:uppercase; letter-spacing:.1em; font-size:.78rem;
+}
+
+/* twee nette kolomkaarten */
+.rij-kaarten{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:16px 0}
+@media (max-width:900px){ .rij-kaarten{ grid-template-columns:1fr } }
+.punten{margin:0;padding-left:18px;color:var(--muted);line-height:1.7}
+.punten li{margin:6px 0}
+
+/* concepts */
+.concept-blok{margin:22px 0 8px}
+.concept-rij{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+@media (max-width:900px){ .concept-rij{ grid-template-columns:1fr } }
+
+.concept{
+  border:1px solid var(--lijn); border-radius:12px; overflow:hidden;
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+  box-shadow:var(--schaduw);
+}
+.concept img{display:block; width:100%; height:28vmin; min-height:220px; object-fit:cover}
+.concept figcaption{
+  padding:10px 12px; text-transform:uppercase; letter-spacing:.12em; font-size:.8rem;
+  border-top:1px solid var(--lijn); color:var(--muted);
+}
+
+/* subtiele hover, zelfde feel als je buttons */
+.info-blok:hover, .concept:hover{
+  border-color: var(--accent-2);
+  transition: border-color .2s ease;
+}
+
+/* Fix white space / overflow issues */
+body, html {
+  overflow-x: hidden;
+  background-color: var(--bg);
+}
+
+main {
+  padding-bottom: 0;
+}
+
+/* Zorg dat de verhalencontainer geen extra ruimte creëert */
+.verhalen {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* Verminder extra margin van info-secties */
+.info-blok,
+.rij-kaarten,
+.concept-blok {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+/* Zorg dat de footer niet te ver naar beneden duwt */
+.voet {
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* Verwijder onbedoelde witte achtergrond bij body of html */
+html, body {
+  background: radial-gradient(1000px 800px at 20% 10%, #101015 0%, var(--bg) 55%),
+              radial-gradient(900px 700px at 80% 0%, #0f0f13 0%, var(--bg) 60%),
+              linear-gradient(180deg, #0b0b0e 0%, #0a0a0b 100%);
+}
+
+
+
+/* ---- extra info-secties binnen verhaal ---- */
+.verhaal-info {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-subblok,
+.info-kaart,
+.info-concepts {
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border: 1px solid var(--lijn);
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: var(--schaduw);
+}
+
+/* titels */
+.info-subblok h3,
+.info-kaart h3,
+.info-concepts h3 {
+  margin: 0 0 10px;
+  font-family: 'Prata', serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+}
+
+/* lijststijl */
+.info-subblok ul,
+.info-kaart ul {
+  margin: 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 8px;
+  color: var(--ink);
+  opacity: .9;
+  line-height: 1.6;
+}
+.info-subblok li span {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-size: .78rem;
+  margin-right: 6px;
+}
+
+/* twee kolommen voor de kaarten */
+.info-subgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+@media (max-width: 860px) {
+  .info-subgrid { grid-template-columns: 1fr; }
+}
+
+/* concept visuals */
+.info-concepts .concept-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.info-concepts figure {
+  position: relative;
+  border: 1px solid var(--lijn);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--glas);
+}
+.info-concepts img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+.info-concepts figcaption {
+  position: absolute;
+  top: 10px; left: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.35);
+  border: 1px solid var(--accent-2);
+  font-size: .75rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+/* ===== Quick Facts (Lore layout) ===== */
+
+
+.quick-facts h3 {
+  margin: 0 0 10px;
+  font-family: 'Prata', serif;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: 1rem;
+  opacity: .92;
+}
+
+.quick-facts ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.quick-facts li {
+  color: var(--ink);
+  opacity: .9;
+  font-size: .95rem;
+  line-height: 1.6;
+}
+
+.quick-facts li span {
+  display: inline-block;
+  min-width: 120px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: .78rem;
+  margin-right: 8px;
+}
+
+.info-concepts figure:nth-child(1) img {
+  object-position: center 3%;
+}
+
+.info-concepts img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-position: center 25%; /* laat Dusk iets naar beneden zakken */
+  filter: brightness(0.72) contrast(1.08) saturate(0.9) hue-rotate(-8deg);
+  transition: filter .4s ease, transform .4s ease;
+}
+
+/* Extra donkere overlay voor consistentie met dark theme */
+.info-concepts figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.45) 100%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* Hover effect blijft helder, maar subtiel */
+.info-concepts figure:hover img {
+  filter: brightness(0.9) contrast(1.1) saturate(1);
+  transform: scale(1.02);
+}
+
+.media-grid .beeld {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+}
+
+/* Donkere, filmische look voor de afbeeldingen */
+.media-grid .beeld::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--src);
+  background-size: cover;
+  background-position: center 35%;
+  filter: brightness(0.7) contrast(1.1) saturate(0.9);
+  transition: filter 0.4s ease, transform 0.4s ease;
+  z-index: 0;
+}
+
+/* Hover-effect — subtiele glow */
+.media-grid .beeld:hover::before {
+  filter: brightness(0.9) contrast(1.15) saturate(1);
+  transform: scale(1.03);
+}
+
+/* Donkere overlay voor extra diepte */
+.media-grid .beeld::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.55));
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* === Phase 2 – zelfde als Phase 1; 3e tile (DOWN) onderaan === */
+.info-concepts .concept-grid.three-up {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.info-concepts .concept-grid.three-up figure:nth-child(3) {
+  grid-column: 1 / -1;   /* derde kaart over twee kolommen */
+}
+
+@media (max-width: 900px) {
+  .info-concepts .concept-grid.three-up { grid-template-columns: 1fr; }
+  .info-concepts .concept-grid.three-up figure:nth-child(3) { grid-column: auto; }
+}
+
+/* Zorg dat caption klein 'pill' label blijft (géén brede balk) */
+.info-concepts .concept figcaption {
+  position: absolute;
+  top: 10px; left: 10px;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.35);
+  border: 1px solid var(--accent-2);
+  color: var(--ink);
+  font-size: .75rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  border-top: none;
+}
+
+/* Zelfde filmische image-look als Phase 1 */
+.info-concepts figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center 25%;
+  filter: brightness(.72) contrast(1.08) saturate(.9) hue-rotate(-8deg);
+  transition: filter .4s ease, transform .4s ease;
+}
+.info-concepts figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.45));
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+.info-concepts figure:hover img {
+  filter: brightness(.9) contrast(1.1) saturate(1);
+  transform: scale(1.02);
+}
+
+/* Phase 2: zelfde grid als phase 1, maar 3e item onderaan over 2 kolommen */
+.info-concepts .concept-grid.three-up {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.info-concepts .concept-grid.three-up figure:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+/* Mobiel gewoon 1 kolom */
+@media (max-width: 900px) {
+  .info-concepts .concept-grid.three-up { grid-template-columns: 1fr; }
+  .info-concepts .concept-grid.three-up figure:nth-child(3) { grid-column: auto; }
+}
+
+/* Phase 2 – darker, cinematic tone */
+#fase-2 .hoofdstuk-banner::before {
+  filter: brightness(0.55) contrast(1.12) saturate(0.9) hue-rotate(-8deg);
+}
+
+/* Alleen Scylla-foto iets naar beneden */
+.scylla-foto::before {
+  background-position: center 63% !important;
+}
+
+#fase-3 .hoofdstuk-banner::before {
+  filter: saturate(88%) contrast(1.05) brightness(.55) !important;
+}
+
+/* Alleen de J concept afbeelding iets naar beneden duwen */
+figure.beeld[style*="J-concept.jpg"]::before {
+  background-position: center 80% !important;
+}
+
+/* Pas alleen de M-concept afbeelding aan (iets uitgezoomd en naar beneden) */
+figure.beeld[style*="M-concept.jpg"]::before {
+  background-size: 110% auto !important;   /* iets ingezoomd effect (meer cropped) */
+  background-position: center 30% !important; /* schuif iets naar beneden */
+}
+
+/* Alleen de M concept afbeelding iets naar beneden schuiven */
+.concept img[src*="M.jpg"] {
+  object-position: center 37% !important; /* 50% is standaard; 65% schuift iets naar beneden */
+}
+
+/* Alleen de full-width Bite Me concept afbeelding iets omhoog plaatsen */
+.media-grid .beeld[style*="BiteMe-concept.jpg"]::before {
+  background-position: center 16%; /* standaard was center center (50%) */
+}
+
+/* Alleen de 'DARK BLOOD' kaart breder en platter maken */
+.info-subblok.info-breed {
+  width: 100%;
+  display: block;
+  grid-column: 1 / -1;
+  margin-bottom: 22px;
+  padding: 14px 20px; /* iets platter qua hoogte */
+}
+
+/* Tekst netjes verdeeld in 2 kolommen */
+.info-subblok.info-breed ul {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 8px 40px;
+}
+
+/* Tekst op één lijn zoals voorbeeld */
+.info-subblok.info-breed li {
+  white-space: nowrap;
+}
+
+/* Alleen voor de 'BITE ME' kaart – li's netjes onder elkaar mét bullets */
+.info-subblok.info-breed ul {
+  display: block;
+  list-style: disc;       /* zorgt dat de puntjes terugkomen */
+  padding-left: 1.2rem;   /* kleine inspringing voor bullets */
+  margin: 0;
+}
+
+.info-subblok.info-breed li {
+  display: list-item;     /* herstelt de echte lijstweergave */
+  white-space: normal;    /* laat tekst doorlopen */
+  margin-bottom: 6px;     /* kleine ruimte tussen regels */
+}
+>>>>>>> 268cd9b (Fixed loading problem bcs of JS)

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Jaar in footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -50,3 +51,9 @@ const ro = new ResizeObserver(()=>resize());
 ro.observe(canvas);
 resize();
 draw();
+=======
+const sterretjes = document.getElementById('year');
+if (sterretjes) {
+  sterretjes.textContent = new Date().getFullYear();
+}
+>>>>>>> 268cd9b (Fixed loading problem bcs of JS)
