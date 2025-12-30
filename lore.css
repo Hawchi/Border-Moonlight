@@ -618,3 +618,28 @@
 #fase-6 .hoofdstuk-banner::before {
   background-position: center 15% !important;
 }
+
+.beeld.memorabilia::before {
+  background-size: contain;       
+  background-position: center;     
+  background-repeat: no-repeat;
+}
+
+.concept-grid .moon-wide {
+  grid-column: 1 / -1;
+}
+
+.concept-grid .moon-wide img {
+  object-fit: cover;
+  object-position: center 15%; 
+}
+
+#fase-7 .hoofdstuk-banner::before {
+  background-position: center 15%;
+}
+
+.info-lijst li span {
+  display: block;      /* ← dit is de key */
+  min-width: unset;    /* ← haalt de geforceerde ruimte weg */
+  margin-bottom: 4px;
+}
