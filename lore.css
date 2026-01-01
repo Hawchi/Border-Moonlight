@@ -657,3 +657,6 @@
   display:none;
 }
 
+.concept.mine-wide img {
+  object-position: center 62%;
+}
