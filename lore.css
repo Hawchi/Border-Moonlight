@@ -639,7 +639,21 @@
 }
 
 .info-lijst li span {
-  display: block;      /* ← dit is de key */
-  min-width: unset;    /* ← haalt de geforceerde ruimte weg */
+  display: block;     
+  min-width: unset;    
   margin-bottom: 4px;
 }
+
+#fase-8 .hoofdstuk-banner::before {
+  background-position: center 30%;
+  filter: brightness(0.7) contrast(1.05);
+}
+
+#fase-7 .hoofdstuk-banner::after{
+  display:none;
+}
+
+#fase-8 .hoofdstuk-banner::after{
+  display:none;
+}
+
