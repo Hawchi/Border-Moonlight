@@ -660,3 +660,7 @@
 .concept.mine-wide img {
   object-position: center 62%;
 }
+
+#fase-9 .hoofdstuk-banner::after{
+  display:none;
+}
