@@ -565,6 +565,7 @@
 
   #fase-3 .hoofdstuk-banner::before {
     filter: saturate(88%) contrast(1.05) brightness(.55) !important;
+    background-position: center 32% !important;
   }
 
   figure.beeld[style*="J-concept.jpg"]::before {
