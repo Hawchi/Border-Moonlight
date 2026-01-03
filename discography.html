@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BORDER: MOONLIGHT · Lore</title>
+
+  <link rel="stylesheet" href="discography.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+
+ <site-navbar src="navbar.html"></site-navbar>
+
+
+
+ <section class="enhypen-intro">
+
+    <div class="enhypen-audio-control" onclick="toggleEnhypenMute()">
+        <span id="mute-icon">🔇</span>
+        <span class="mute-text">SOUND OFF</span>
+      </div>
+
+      <div class="enhypen-intro-content">
+        <p class="enhypen-welcome-text">WELCOME TO</p>
+        <h1 class="enhypen-intro-title">ENHYPEN</h1>
+        <h2 class="enhypen-page-name">DISCOGRAPHY <span>PAGE</span></h2>
+        <p class="enhypen-intro-tagline">A Journey through Blood, Fate and Moonlight</p>
+        
+        </div>
+
+
+    <div class="enhypen-video-box">
+        <video autoplay loop playsinline class="enhypen-video-element" id="intro-video">
+            <source src="images/enhypen-intro.mp4" type="video/mp4">
+          </video>
+      <div class="enhypen-overlay"></div>
+      <div class="enhypen-intro-content">
+        <h1 class="enhypen-intro-title">ENHYPEN</h1>
+        <p class="enhypen-intro-tagline">A Journey through Blood, Fate and Moonlight</p>
+        <div class="enhypen-scroll-hint">
+          <span>Scroll to explore the discography</span>
+          <div class="enhypen-arrow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<section class="discography" id="discography">
+    <header class="discography__header">
+      <h2 class="discography__title">ENHYPEN DISCOGRAPHY</h2>
+      <p class="discography__subtitle">
+        Title tracks = <span class="legend legend--title">pink</span> • B-sides met MV = <span class="legend legend--mv">blue</span>
+      </p>
+  
+      <div class="discography__filters" role="group" aria-label="Discography filters">
+        <button class="filter-btn is-active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="title">Title Tracks</button>
+        <button class="filter-btn" data-filter="mv">MV B-sides</button>
+      </div>
+    </header>
+  
+    <div class="discography__grid">
+  
+      <!-- One In A Billion -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/one-in-a-billion.jpg" alt="One In A Billion cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">One In A Billion</h3>
+          <p class="release-card__meta">Release Date: September 6, 2022 • Single</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--title" data-tags="title">One In A Billion</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- 定め (Sadame) -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/sadame.jpg" alt="定め (Sadame) cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">定め</h3>
+          <p class="release-card__meta">Release Date: October 26, 2022 • Japanese Full Album</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--title" data-tags="title">Future Perfect (Pass the MIC) (Japanese ver.)</li>
+            <li class="tracklist__item">Blessed-Cursed (Japanese ver.)</li>
+            <li class="tracklist__item">Make The Change</li>
+            <li class="tracklist__item">Tamed-Dashed (Japanese ver.)</li>
+            <li class="tracklist__item">Drunk-Dazed (Japanese ver.)</li>
+            <li class="tracklist__item">Given-Taken (Japanese ver.)</li>
+            <li class="tracklist__item">Always</li>
+            <li class="tracklist__item">Let Me In (20 Cube) (Japanese ver.)</li>
+            <li class="tracklist__item">Forget Me Not</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- Make The Change -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/make-the-change.jpg" alt="Make The Change cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">Make The Change</h3>
+          <p class="release-card__meta">Release Date: October 12, 2022 • Japanese Single</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--title" data-tags="title">Make The Change</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- Dark Blood -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/dark-blood.jpg" alt="Dark Blood cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">Dark Blood</h3>
+          <p class="release-card__meta">Release Date: May 22, 2023 • 4th Mini Album</p>
+          <ol class="tracklist">
+            <li class="tracklist__item">Fate</li>
+            <li class="tracklist__item tracklist__item--title" data-tags="title">Bite Me</li>
+            <li class="tracklist__item tracklist__item--mv" data-tags="mv">Sacrifice (Eat Me Up)</li>
+            <li class="tracklist__item">Chaconne</li>
+            <li class="tracklist__item">Bills</li>
+            <li class="tracklist__item">Karma</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- One and Only (Pokemon x ENHYPEN) -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/one-and-only.jpg" alt="One and Only cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">One and Only</h3>
+          <p class="release-card__meta">Release Date: July 11, 2023 • Pokémon Music Collective Collab Single</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--title" data-tags="title">One and Only</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- Criminal Love -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/criminal-love.jpg" alt="Criminal Love cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">Criminal Love</h3>
+          <p class="release-card__meta">Release Date: July 30, 2023 • Single</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--title" data-tags="title">Criminal Love</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- Blossom -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/blossom.jpg" alt="Blossom cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">Blossom</h3>
+          <p class="release-card__meta">Release Date: August 1, 2023 • Japanese Pre-Release Single</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--title" data-tags="title">BLOSSOM</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- 結 -YOU- -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/you.jpg" alt="結 -YOU- cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">結 -YOU-</h3>
+          <p class="release-card__meta">Release Date: September 5, 2023 • Japanese Single</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--title" data-tags="title">Bite Me (Japanese ver.)</li>
+            <li class="tracklist__item">Bills (Japanese ver.)</li>
+            <li class="tracklist__item">BLOSSOM</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- Keep Swimmin’ Through -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/keep-swimmin-through.jpg" alt="Keep Swimmin Through cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">Keep Swimmin’ Through</h3>
+          <p class="release-card__meta">Release Date: November 3, 2023 • Single (Baby Shark’s Big Movie)</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--title" data-tags="title">Keep Swimmin’ Through</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- ORANGE BLOOD -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/orange-blood.jpg" alt="ORANGE BLOOD cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">ORANGE BLOOD</h3>
+          <p class="release-card__meta">Release Date: November 17, 2023 • 5th Mini Album</p>
+          <ol class="tracklist">
+            <li class="tracklist__item">Mortal</li>
+            <li class="tracklist__item tracklist__item--title" data-tags="title">Sweet Venom</li>
+            <li class="tracklist__item">Still Monster</li>
+            <li class="tracklist__item">멈어 (Blind)</li>
+            <li class="tracklist__item">Orange Flower (You Complete Me)</li>
+            <li class="tracklist__item">Sweet Venom (English ver.)</li>
+            <li class="tracklist__item">Sweet Venom (ft. Bella Porch) (Digital ONLY)</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- I Need U -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/i-need-u.jpg" alt="I Need U cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">I Need U – Spotify Singles</h3>
+          <p class="release-card__meta">Release Date: February 16, 2024 • Single</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--title" data-tags="title">I Need U</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- What Makes You Beautiful -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/what-makes-you-beautiful.jpg" alt="What Makes You Beautiful cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">What Makes You Beautiful [The Seasons: Red Carpet with Lee Hyori]</h3>
+          <p class="release-card__meta">Release Date: February 23, 2024 • Single</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--title" data-tags="title">What Makes You Beautiful</li>
+            <li class="tracklist__item">What Makes You Beautiful (Inst.)</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- Sweet Venom (Seeb Remix) -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/sweet-venom-seeb-remix.jpg" alt="Sweet Venom (Seeb Remix) cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">Sweet Venom (Seeb Remix)</h3>
+          <p class="release-card__meta">Release Date: March 29, 2024 • Remix Single</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--mv" data-tags="mv">Sweet Venom (Seeb Remix)</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- Memorabilia -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/memorabilia.jpg" alt="MEMORABILIA cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">MEMORABILIA</h3>
+          <p class="release-card__meta">Release Date: May 13, 2024 • Special Album (DARK MOON)</p>
+          <ol class="tracklist">
+            <li class="tracklist__item">One In A Billion</li>
+            <li class="tracklist__item">CRIMINAL LOVE</li>
+            <li class="tracklist__item tracklist__item--title" data-tags="title">Fatal Trouble</li>
+            <li class="tracklist__item">Teeth (by JUNGWON, HEESEUNG, SUNOO, NI-KI)</li>
+            <li class="tracklist__item">Lucifer (by JAY, JAKE, SUNGHOON)</li>
+            <li class="tracklist__item">Scream</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- ROMANCE : UNTOLD -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/romance-untold.jpg" alt="ROMANCE UNTOLD cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">ROMANCE : UNTOLD</h3>
+          <p class="release-card__meta">Release Date: July 12, 2024 • Album</p>
+          <ol class="tracklist">
+            <li class="tracklist__item">Moonstruck</li>
+            <li class="tracklist__item tracklist__item--title" data-tags="title">XO (Only If You Say Yes)</li>
+            <li class="tracklist__item">Your Eyes Only</li>
+            <li class="tracklist__item">Hundred Broken Hearts</li>
+            <li class="tracklist__item tracklist__item--mv" data-tags="mv">Brought The Heat Back</li>
+            <li class="tracklist__item">Paranormal</li>
+            <li class="tracklist__item">Royalty</li>
+            <li class="tracklist__item">Highway 1009</li>
+            <li class="tracklist__item">XO (Only If You Say Yes) (English ver.) (ft. JVKE)</li>
+            <li class="tracklist__item">Highway 1009 (Narr ver.) (CD Only)</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- XO (Remixes) -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/xo-remixes.jpg" alt="XO Remixes cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">XO (Only If You Say Yes) (Remixes)</h3>
+          <p class="release-card__meta">Release Date: July 16, 2024 • Remixes</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--title" data-tags="title">XO (Only If You Say Yes) (English ver.)</li>
+            <li class="tracklist__item">XO (Only If You Say Yes) (English ver.) (Club Night Remix)</li>
+            <li class="tracklist__item">XO (Only If You Say Yes) (English ver.) (California Night Remix)</li>
+            <li class="tracklist__item">XO (Only If You Say Yes) (English ver.) (Drive Night Remix)</li>
+            <li class="tracklist__item">XO (Only If You Say Yes) (English ver.) (Sped Up ver.)</li>
+            <li class="tracklist__item">XO (Only If You Say Yes) (English ver.) (Slowed + Reverb ver.)</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- Brought The Heat Back (ft. Ava Max) -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/brought-the-heat-back-ava-max.jpg" alt="Brought The Heat Back (ft. Ava Max) cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">Brought The Heat Back (ft. Ava Max)</h3>
+          <p class="release-card__meta">Release Date: August 9, 2024 • Single</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--title" data-tags="title">Brought The Heat Back (ft. Ava Max)</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- One and Only (PIKA PIKA Remix) -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/one-and-only-pika-pika-remix.jpg" alt="One and Only PIKA PIKA Remix cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">One and Only (PIKA PIKA Remix)</h3>
+          <p class="release-card__meta">Release Date: August 23, 2024 • Single (Pokémon)</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--title" data-tags="title">One and Only (PIKA PIKA Remix) (with Won Jong Lee)</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- Home -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/home.jpg" alt="Home cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">Home</h3>
+          <p class="release-card__meta">Release Date: October 18, 2024 • Single</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--title" data-tags="title">Home</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- ROMANCE : UNTOLD -daydream- -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/romance-untold-daydream.jpg" alt="ROMANCE UNTOLD daydream cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">ROMANCE : UNTOLD -daydream-</h3>
+          <p class="release-card__meta">Release Date: November 11, 2024 • 2nd Studio Repackage Album</p>
+          <ol class="tracklist">
+            <li class="tracklist__item">Daydream</li>
+            <li class="tracklist__item tracklist__item--title" data-tags="title">No Doubt</li>
+            <li class="tracklist__item">Moonstruck</li>
+            <li class="tracklist__item tracklist__item--mv" data-tags="mv">XO (Only If You Say Yes)</li>
+            <li class="tracklist__item">Your Eyes Only</li>
+            <li class="tracklist__item">Hundred Broken Hearts</li>
+            <li class="tracklist__item">Brought The Heat Back</li>
+            <li class="tracklist__item">Paranormal</li>
+            <li class="tracklist__item">Royalty</li>
+            <li class="tracklist__item">Highway 1009</li>
+            <li class="tracklist__item">XO (Only If You Say Yes) (English ver.) ft. JVKE</li>
+            <li class="tracklist__item">Highway 1009 (Narr ver.) (CD Only)</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- ROMANCE : UNTOLD -daydream- (JAPAN Edition) -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/romance-untold-daydream-japan.jpg" alt="ROMANCE UNTOLD daydream JAPAN Edition cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">ROMANCE : UNTOLD -daydream- (JAPAN Edition)</h3>
+          <p class="release-card__meta">Release Date: November 18, 2024 • Japanese Single</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--title" data-tags="title">No Doubt – Japanese Ver. / Digital Only</li>
+            <li class="tracklist__item">XO (Only If You Say Yes) – Japanese Ver. / Digital Only</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- Loose -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/loose.jpg" alt="Loose cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">Loose</h3>
+          <p class="release-card__meta">Release Date: April 4, 2025 • Single</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--title" data-tags="title">Loose</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- DESIRE : UNLEASH -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/desire-unleash.jpg" alt="DESIRE : UNLEASH cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">DESIRE : UNLEASH</h3>
+          <p class="release-card__meta">Release Date: June 5, 2025 • 6th Mini Album</p>
+          <ol class="tracklist">
+            <li class="tracklist__item">Flashover</li>
+            <li class="tracklist__item tracklist__item--title" data-tags="title">Bad Desire (With or Without You)</li>
+            <li class="tracklist__item">Outside</li>
+            <li class="tracklist__item">Loose (Korean ver.)</li>
+            <li class="tracklist__item">Helium</li>
+            <li class="tracklist__item">Too Close</li>
+            <li class="tracklist__item">Bad Desire (With or Without You) (English ver.)</li>
+            <li class="tracklist__item tracklist__item--mv" data-tags="mv">Loose</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- Demons -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/demons.jpg" alt="Demons cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">Demons [The Seasons: Cantabile of Park Bogum]</h3>
+          <p class="release-card__meta">Release Date: June 13, 2025 • Single</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--title" data-tags="title">Demons</li>
+            <li class="tracklist__item">Demons (Inst.)</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- Shine On Me -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/shine-on-me.jpg" alt="Shine On Me cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">Shine On Me</h3>
+          <p class="release-card__meta">Release Date: July 4, 2025 • Japanese Pre-Release Single</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--title" data-tags="title">Shine On Me</li>
+          </ol>
+        </div>
+      </article>
+  
+      <!-- 宵 -YOI- -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/yoi.jpg" alt="宵 -YOI- cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">宵 -YOI-</h3>
+          <p class="release-card__meta">Release Date: July 29, 2025 • Japanese Single</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--title" data-tags="title">Shine On Me</li>
+            <li class="tracklist__item">Echoes</li>
+            <li class="tracklist__item">Bad Desire (With or Without You) [Japanese Ver.]</li>
+          </ol>
+        </div>
+      </article>
+  
+    </div>
+  </section>
+
+  <script src="discography.js"></script>
+  <script src="navbar.js" type="module"></script>
+
+  </body>
+  </html>
+  
+
+  

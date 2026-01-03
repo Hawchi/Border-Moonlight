@@ -666,3 +666,9 @@
   display:none;
 }
   
+#fase-7-5 .hoofdstuk-banner::before {
+  background-position: center 35%;
+}
+
+
+
