@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BORDER: MOONLIGHT · About ENHYPEN</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="about.css" />
+</head>
+
+<body>
+  <site-navbar src="navbar.html"></site-navbar>
+
+  <!-- Background stars -->
+  <canvas id="stars-canvas" aria-hidden="true"></canvas>
+
+ <section class="intro">
+  <div class="intro__foto"></div>
+  
+  <div class="intro__overlay"></div>
+
+  <div class="intro__inhoud">
+      <p class="intro__boventekst">WELCOME TO</p>
+      <h1 class="intro__titel">ENHYPEN</h1>
+      <p class="intro__ondertitel">
+        Get to know the members • Discover their vibe • Step into Moonlight
+      </p>
+
+      <div class="intro__labels">
+        <span class="label">7 Members</span>
+        <span class="label">Dark / Moonlight Theme</span>
+        <span class="label">Profiles + Fun Facts</span>
+      </div>
+
+      <div class="scroll-pijl">
+        <span>Scroll to meet them</span>
+        <div class="scroll-pijl__icoon"></div>
+      </div>
+  </div>
+</section>
+
+  <!-- MEMBERS -->
+  <main class="members" id="members">
+    <header class="members__header">
+      <h2 class="members__title">MEET THE MEMBERS</h2>
+      <p class="members__desc">
+       Click on a member to go to their profile page
+      </p>
+
+
+    
+    <section class="members__grid" id="membersGrid">
+      <a class="member-card" href="JUNGWON1.html" data-group="hyung" data-name="jungwon">
+        <img class="member-card__img" src="images/Jungwon.png" alt="Jungwon" />
+        <div class="member-card__overlay"></div>
+        <div class="member-card__info">
+          <h3 class="member-card__name">JUNGWON</h3>
+          <p class="member-card__meta">Leader • 2004</p>
+          <span class="member-card__tag">Moonlight Core</span>
+        </div>
+      </a>
+
+      <a class="member-card" href="heeseung.html" data-group="hyung" data-name="heeseung">
+        <img class="member-card__img" src="images/Heeseung.png" alt="Heeseung" />
+        <div class="member-card__overlay"></div>
+        <div class="member-card__info">
+          <h3 class="member-card__name">HEESEUNG</h3>
+          <p class="member-card__meta">Vocal • 2001</p>
+          <span class="member-card__tag">Vampire Aura</span>
+        </div>
+      </a>
+
+      <a class="member-card" href="jay.html" data-group="hyung" data-name="jay">
+        <img class="member-card__img" src="images/Jay.png" alt="Jay" />
+        <div class="member-card__overlay"></div>
+        <div class="member-card__info">
+          <h3 class="member-card__name">JAY</h3>
+          <p class="member-card__meta">Rapper • 2002</p>
+          <span class="member-card__tag">Dark Flame</span>
+        </div>
+      </a>
+
+      <a class="member-card" href="jake.html" data-group="hyung" data-name="jake">
+        <img class="member-card__img" src="images/Jake.png" alt="Jake" />
+        <div class="member-card__overlay"></div>
+        <div class="member-card__info">
+          <h3 class="member-card__name">JAKE</h3>
+          <p class="member-card__meta">Vocal • 2002</p>
+          <span class="member-card__tag">Soft Night</span>
+        </div>
+      </a>
+
+      <a class="member-card" href="sunghoon.html" data-group="maknae" data-name="sunghoon">
+        <img class="member-card__img" src="images/Sunghoon.png" alt="Sunghoon" />
+        <div class="member-card__overlay"></div>
+        <div class="member-card__info">
+          <h3 class="member-card__name">SUNGHOON</h3>
+          <p class="member-card__meta">Visual • 2002</p>
+          <span class="member-card__tag">Ice Moon</span>
+        </div>
+      </a>
+
+      <a class="member-card" href="sunoo.html" data-group="maknae" data-name="sunoo">
+        <img class="member-card__img" src="images/Sunoo.png" alt="Sunoo" />
+        <div class="member-card__overlay"></div>
+        <div class="member-card__info">
+          <h3 class="member-card__name">SUNOO</h3>
+          <p class="member-card__meta">Vocal • 2003</p>
+          <span class="member-card__tag">Bright Spell</span>
+        </div>
+      </a>
+
+      <a class="member-card" href="niki.html" data-group="maknae" data-name="ni-ki">
+        <img class="member-card__img" src="images/Niki.png" alt="Ni-ki" />
+        <div class="member-card__overlay"></div>
+        <div class="member-card__info">
+          <h3 class="member-card__name">NI-KI</h3>
+          <p class="member-card__meta">Dance • 2005</p>
+          <span class="member-card__tag">Shadow Move</span>
+        </div>
+      </a>
+    </section>
+
+
+
+  <script src="navbar.js" type="module"></script>
+</body>
+</html>

@@ -139,3 +139,50 @@ const video = document.getElementById('intro-video');
       text.innerText = 'SOUND OFF';
     }
   }
+
+window.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('intro-video');
+    const source = document.getElementById('video-source');
+    
+    const videoPool = [
+        'images/enhypen-intro.mp4',
+        'images/enhypen-intro-1.mp4',
+        'images/enhypen-intro-2.mp4',
+        'images/enhypen-intro-3.mp4'
+    ];
+
+    function playRandomVideo() {
+
+        const randomVideo = videoPool[Math.floor(Math.random() * videoPool.length)];
+        
+        if (source && video) {
+            source.src = randomVideo;
+            video.load();
+            video.muted = true; 
+            video.play().catch(error => console.log("Playback interaction needed"));
+        }
+    }
+
+    playRandomVideo();
+
+    video.addEventListener('ended', () => {
+        playRandomVideo();
+    });
+});
+
+const releaseDate = new Date("January 16, 2026 06:00:00").getTime();
+
+const timer = setInterval(() => {
+  const now = new Date().getTime();
+  const diff = releaseDate - now;
+
+  if (diff < 0) {
+    clearInterval(timer);
+    return;
+  }
+
+  document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+  document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+  document.getElementById("minutes").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+  document.getElementById("seconds").innerText = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
+}, 1000);

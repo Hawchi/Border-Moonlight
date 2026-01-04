@@ -1,0 +1,556 @@
+/* =========================
+   BORDER: MOONLIGHT THEME
+   Jungwon Profile Page
+========================= */
+
+:root{
+  --bg: #070812;
+  --text: rgba(245,245,255,.92);
+  --muted: rgba(245,245,255,.65);
+
+  --glass: rgba(255,255,255,.06);
+  --glass-2: rgba(255,255,255,.08);
+  --border: rgba(255,255,255,.14);
+
+  --pink: rgba(255, 120, 190, 1);
+  --pink-soft: rgba(255, 120, 190, .22);
+
+  --moon-glow: rgba(255, 120, 190, .22);
+  --blue-soft: rgba(120, 170, 255, .14);
+
+  --shadow: 0 18px 70px rgba(0,0,0,.55);
+}
+
+.bm-profile{
+  background:
+    radial-gradient(900px 600px at 18% 12%, var(--moon-glow), transparent 60%),
+    radial-gradient(900px 600px at 82% 18%, var(--blue-soft), transparent 60%),
+    radial-gradient(900px 800px at 50% 90%, rgba(255,255,255,.06), transparent 65%),
+    var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* stars */
+#stars-canvas{
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .75;
+}
+
+/* Pink moon overlay background */
+.pinkmoon-bg{
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(360px 360px at 78% 18%, rgba(255,120,190,.28), transparent 62%),
+    radial-gradient(520px 520px at 78% 18%, rgba(255,120,190,.12), transparent 70%);
+  filter: blur(0.2px);
+}
+
+/* make content above stars+moon */
+#navbar-placeholder,
+.bm-hero-profile,
+.bm-content{
+  position: relative;
+  z-index: 5;
+}
+
+/* HERO */
+.bm-hero-profile{
+  padding: 110px 24px 56px;
+  text-align: center;
+}
+
+.bm-hero-profile__inner{
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.bm-kicker{
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: .75;
+  margin: 0 0 10px;
+}
+
+.bm-title{
+  font-size: clamp(46px, 8vw, 110px);
+  margin: 0;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 900;
+
+  background: linear-gradient(135deg, #fff 0%, rgba(255,120,190,.95) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  filter: drop-shadow(0 0 18px rgba(255,120,190,.35));
+}
+
+.bm-star-icon{
+  display: inline-block;
+  margin-left: 10px;
+  font-size: .6em;
+  opacity: .9;
+  transform: translateY(-6px);
+}
+
+.bm-underline{
+  width: min(420px, 82vw);
+  height: 2px;
+  margin: 14px auto 14px;
+  background: linear-gradient(90deg, transparent, rgba(255,120,190,.55), transparent);
+  box-shadow: 0 0 18px rgba(255,120,190,.18);
+}
+
+.bm-hangul{
+  margin: 0;
+  opacity: .9;
+  font-size: 18px;
+  letter-spacing: .06em;
+}
+
+.bm-tagline{
+  margin: 14px 0 0;
+  opacity: .65;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* MAIN LAYOUT */
+.bm-content{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 90px;
+  display: grid;
+  gap: 28px;
+}
+
+/* PROFILE INFO CARD */
+.bm-profile-info{
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 22px;
+  align-items: center;
+
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+  padding: 18px;
+}
+
+.bm-profile-image{
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 18px 50px rgba(0,0,0,.35);
+}
+
+.bm-basic-info {
+  padding: 6px 10px;
+  text-align: center; /* Centreert alle tekst (p, strong) */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Zorgt dat de inhoud verticaal in het midden blijft */
+}
+
+.bm-basic-info p {
+  margin: 10px 0;
+  opacity: .92;
+  line-height: 1.4;
+  width: 100%; /* Zorgt dat de text-align: center over de volle breedte werkt */
+}
+
+.bm-basic-info strong{
+  color: rgba(255,255,255,.92);
+}
+
+/* star divider */
+.bm-line-with-star {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 12px;
+  align-items: center;
+  margin: 12px 0 16px;
+  width: 100%; /* Vult de breedte van de info-sectie */
+  max-width: 300px; /* Optioneel: houdt de lijntjes compact rondom de ster */
+}
+
+.bm-line{
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,120,190,.55), transparent);
+  opacity: .85;
+}
+
+.bm-star{
+  color: rgba(255,120,190,.95);
+  text-shadow: 0 0 16px rgba(255,120,190,.35);
+}
+
+/* SECTION HEADERS */
+.bm-section-header{
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 14px;
+  margin: 10px 0 12px;
+}
+
+.bm-section-title{
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-size: 14px;
+  opacity: .9;
+}
+
+.bm-section-title--solo{
+  text-align: left;
+  font-size: 13px;
+  margin: 0 0 10px;
+  letter-spacing: .28em;
+  opacity: .85;
+}
+
+/* SHORTCUT */
+/* SHORTCUT - Nu gelijk aan de rest van de secties */
+.bm-shortcut {
+    max-width: 1100px; /* Precies gelijk aan .bm-content */
+    width: 100%;       /* Vult de beschikbare breedte van de grid */
+    margin: 0 auto;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 26px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(12px);
+    padding: 24px 18px; /* Padding afgestemd op andere kaarten */
+    box-sizing: border-box;
+}
+
+/* De rij instellen zodat alle 7 op één lijn passen */
+.bm-member-row {
+    display: flex;
+    justify-content: space-between; /* Verdeelt de leden over de volledige breedte */
+    align-items: flex-start;
+    gap: 10px;         /* Kleine tussenruimte om alles passend te houden */
+    flex-wrap: nowrap; /* Forceert één lijn */
+    margin-top: 15px;
+}
+
+/* De thumb (foto + naam container) */
+.bm-member-thumb {
+    flex: 1;           /* Zorgt dat elk lid een gelijk deel van de breedte pakt */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    min-width: 0;      /* Voorkomt dat flex-items breder worden dan de container */
+}
+
+/* De afbeelding binnen de thumb */
+.bm-member-thumb img {
+    width: 100%;       /* Maakt de foto responsive binnen zijn flex-vakje */
+    max-width: 100px;  /* Maximale grootte voor balans op desktop */
+    aspect-ratio: 1 / 1; /* Houdt de foto's perfect vierkant */
+    border-radius: 20px;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Namen onder de foto's */
+.bm-member-name {
+    margin-top: 10px;
+    font-size: 11px;   /* Iets kleiner voor betere fit op één lijn */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+
+/* Effect wanneer je over een lid hovert */
+.bm-member-thumb:hover img {
+    border-color: var(--pink); /* Roze border bij hover */
+    box-shadow: 0 0 15px var(--pink-soft); /* Zachte roze gloed */
+    transform: translateY(-5px); /* Subtiele lift zoals in je oude project */
+}
+
+/* Stijl voor het actieve lid (waar je nu op de pagina bent) */
+.bm-member-thumb.is-active img {
+    border-color: var(--pink); /* Roze border voor actieve pagina */
+    box-shadow: 0 0 25px rgba(255, 120, 190, 0.6); /* Sterkere roze gloed voor focus */
+    border-width: 3px; /* Iets dikker om het verschil te laten zien */
+}
+
+/* De naam kleurt ook mee */
+.bm-member-thumb:hover .bm-member-name,
+.bm-member-thumb.is-active .bm-member-name {
+    color: var(--pink); /* Naam wordt roze bij hover of active */
+    text-shadow: 0 0 10px var(--pink-soft);
+    font-weight: bold;
+}
+
+
+
+
+/* ABOUT */
+.bm-about{
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+  padding: 18px;
+}
+
+.bm-about-text {
+  font-size: 17px;              /* groter dan standaard */
+  line-height: 1.9;             /* luchtiger */
+  letter-spacing: 0.2px;
+  color: rgba(240, 240, 250, 0.9);
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  text-shadow: 0 0 20px rgba(255, 119, 183, 0.08);
+}
+
+
+
+
+.bm-quote{
+  margin-top: 14px;
+  padding: 14px 14px;
+  border-radius: 18px;
+  background: rgba(255,120,190,.08);
+  border: 1px solid rgba(255,120,190,.18);
+  position: relative;
+}
+
+.bm-quote__mark{
+  color: rgba(255,120,190,.9);
+  font-size: 26px;
+  line-height: 1;
+}
+
+.bm-quote__mark--end{
+  position: absolute;
+  right: 12px;
+  bottom: 6px;
+}
+
+.bm-quote__text{
+  margin: 6px 0 0;
+  opacity: .88;
+  letter-spacing: .06em;
+}
+
+/* GALLERY */
+.bm-gallery{
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+  padding: 18px;
+}
+
+.bm-slider{
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.bm-image-scroll{
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.03);
+}
+
+.bm-image-strip{
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.bm-image-strip::-webkit-scrollbar{
+  height: 8px;
+}
+.bm-image-strip::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,.16);
+  border-radius: 999px;
+}
+
+.bm-image-strip img{
+  height: 160px;
+  width: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+.bm-slide-btn{
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.bm-slide-btn:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.1);
+  border-color: rgba(255,120,190,.28);
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .bm-profile-info{
+    grid-template-columns: 1fr;
+  }
+  .bm-member-row{
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .bm-member-thumb img{
+    height: 74px;
+  }
+}
+
+
+
+
+
+
+.bm-member-intro {
+    position: relative;
+    height: 100vh; /* Vult het hele scherm bij het laden */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.bm-video-container {
+    position: absolute;
+    inset: 0;
+    z-index: 1; /* Onderste laag */
+}
+
+.bm-video-element {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Vult het scherm zonder vervorming */
+}
+
+.bm-video-overlay {
+    position: absolute;
+    inset: 0;
+    /* Verloop zorgt voor een zachte overgang naar de rest van de pagina */
+    background: linear-gradient(to bottom, rgba(7,8,18,0.2) 0%, rgba(7,8,18,1) 100%);
+    z-index: 2;
+}
+
+.bm-intro-content {
+    position: relative;
+    z-index: 3; /* Boven de video en overlay */
+    text-align: center;
+}
+
+/* De Scroll Hint onderaan het scherm */
+/* De container van de scroll hint */
+.bm-member-scroll {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    text-align: center;
+    pointer-events: none; /* Zorgt dat de tekst niet in de weg zit bij het klikken */
+}
+
+/* De tekst zelf naar roze aanpassen */
+.bm-member-scroll span {
+    display: block;
+    font-family: 'Baloo Bhaijaan', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--pink); /* Gebruikt je gedefinieerde roze kleur */
+    text-shadow: 0 0 10px rgba(255, 120, 190, 0.5); /* Voegt een zachte roze gloed toe */
+    margin-bottom: 8px;
+}
+
+/* Het pijltje naar roze aanpassen */
+.bm-arrow {
+    width: 15px;
+    height: 15px;
+    margin: 0 auto;
+    border-right: 2px solid var(--pink); /* Pijltje krijgt de roze kleur */
+    border-bottom: 2px solid var(--pink);
+    transform: rotate(45deg);
+    animation: arrowBounce 2s infinite; /* Behoudt de beweging naar beneden */
+    filter: drop-shadow(0 0 5px rgba(255, 120, 190, 0.4));
+}
+
+/* Animatie voor de beweging */
+@keyframes arrowBounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(45deg); }
+    40% { transform: translateY(-10px) rotate(45deg); }
+    60% { transform: translateY(-5px) rotate(45deg); }
+}
+
+
+.bm-lore-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 20px auto 0;
+  max-width: 900px;
+}
+
+.bm-lore-tags li {
+  padding: 8px 16px;
+  border-radius: 999px; /* Maakt ze pil-vormig */
+  border: 1px solid var(--border);
+  background: var(--glass-2); /* Subtiele doorzichtige achtergrond */
+  color: var(--pink); /* De roze kleur voor de tekst */
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.bm-lore-tags li:hover {
+    background: var(--pink-soft); /* Lichtroze gloed bij hover */
+    border-color: var(--pink);
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(255, 120, 190, 0.4);
+    cursor: default;
+}

@@ -10,50 +10,41 @@
 </head>
 <body>
 
-
  <site-navbar src="navbar.html"></site-navbar>
 
 
+<section class="enhypen-intro">
+  <div class="enhypen-audio-control" onclick="toggleEnhypenMute()">
+    <span id="mute-icon">🔇</span>
+    <span class="mute-text">SOUND OFF</span>
+  </div>
 
- <section class="enhypen-intro">
+  <div class="enhypen-video-box">
+    <video autoplay playsinline class="enhypen-video-element" id="intro-video">
+      <source src="" type="video/mp4" id="video-source">
+    </video>
+  </div>
+  
+  <div class="enhypen-overlay"></div>
 
-    <div class="enhypen-audio-control" onclick="toggleEnhypenMute()">
-        <span id="mute-icon">🔇</span>
-        <span class="mute-text">SOUND OFF</span>
-      </div>
+  <div class="enhypen-intro-content">
+    <p class="enhypen-welcome-text">WELCOME TO</p>
+    <h1 class="enhypen-intro-title">ENHYPEN</h1>
+    <h2 class="enhypen-page-name">DISCOGRAPHY <span>PAGE</span></h2>
+    <p class="enhypen-intro-tagline">A Journey through Blood, Fate and Moonlight</p>
+  </div>
 
-      <div class="enhypen-intro-content">
-        <p class="enhypen-welcome-text">WELCOME TO</p>
-        <h1 class="enhypen-intro-title">ENHYPEN</h1>
-        <h2 class="enhypen-page-name">DISCOGRAPHY <span>PAGE</span></h2>
-        <p class="enhypen-intro-tagline">A Journey through Blood, Fate and Moonlight</p>
-        
-        </div>
-
-
-    <div class="enhypen-video-box">
-        <video autoplay loop playsinline class="enhypen-video-element" id="intro-video">
-            <source src="images/enhypen-intro.mp4" type="video/mp4">
-          </video>
-      <div class="enhypen-overlay"></div>
-      <div class="enhypen-intro-content">
-        <h1 class="enhypen-intro-title">ENHYPEN</h1>
-        <p class="enhypen-intro-tagline">A Journey through Blood, Fate and Moonlight</p>
-        <div class="enhypen-scroll-hint">
-          <span>Scroll to explore the discography</span>
-          <div class="enhypen-arrow"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
+  <div class="enhypen-scroll-hint">
+    <span>Scroll to explore the discography</span>
+    <div class="enhypen-arrow"></div>
+  </div>
+</section>
 
 <section class="discography" id="discography">
     <header class="discography__header">
       <h2 class="discography__title">ENHYPEN DISCOGRAPHY</h2>
       <p class="discography__subtitle">
-        Title tracks = <span class="legend legend--title">pink</span> • B-sides met MV = <span class="legend legend--mv">blue</span>
+        Title tracks = <span class="legend legend--title">pink</span> •  B-sides with MV’s (excluding intros and outros) = <span class="legend legend--mv">blue</span>
       </p>
   
       <div class="discography__filters" role="group" aria-label="Discography filters">
@@ -64,6 +55,163 @@
     </header>
   
     <div class="discography__grid">
+
+
+    <article class="release-card" data-tags="korean-album">
+  <img class="release-card__cover" src="images/border-day-one.jpg" alt="BORDER : DAY ONE cover" />
+  <div class="release-card__info">
+    <h3 class="release-card__name">BORDER : DAY ONE</h3>
+    <p class="release-card__meta">November 30, 2020 • 1st Mini Album</p>
+    <ol class="tracklist">
+      <li class="tracklist__item">Intro : Walk the Line</li>
+      <li class="tracklist__item tracklist__item--title">Given-Taken</li>
+      <li class="tracklist__item tracklist__item--mv">Let Me In (20 CUBE)</li>
+      <li class="tracklist__item">10 Months</li>
+      <li class="tracklist__item">Flicker</li>
+      <li class="tracklist__item">Outro : Cross the Line</li>
+    </ol>
+  </div>
+</article>
+
+<article class="release-card" data-tags="korean-album">
+  <img class="release-card__cover" src="images/border-carnival.jpg" alt="BORDER : CARNIVAL cover" />
+  <div class="release-card__info">
+    <h3 class="release-card__name">BORDER : CARNIVAL</h3>
+    <p class="release-card__meta">April 26, 2021 • 2nd Mini Album</p>
+    <ol class="tracklist">
+      <li class="tracklist__item">Intro : The Invitation</li>
+      <li class="tracklist__item tracklist__item--title">Drunk-Dazed</li>
+      <li class="tracklist__item tracklist__item--mv">Fever</li>
+      <li class="tracklist__item">Not For Sale</li>
+      <li class="tracklist__item">Mixed Up</li>
+      <li class="tracklist__item">Outro : The Wormhole</li>
+    </ol>
+  </div>
+</article>
+
+<article class="release-card" data-tags="japanese-album">
+  <img class="release-card__cover" src="images/border-hakanai.jpg" alt="BORDER : Hakanai cover" />
+  <div class="release-card__info">
+    <h3 class="release-card__name">BORDER : 儚い (Hakanai)</h3>
+    <p class="release-card__meta">July 6, 2021 • 1st Japanese Single</p>
+    <ol class="tracklist">
+      <li class="tracklist__item tracklist__item--title">Given-Taken [Japanese Ver.]</li>
+      <li class="tracklist__item">Let Me In (20 Cube) [Japanese Ver.]</li>
+      <li class="tracklist__item tracklist__item--mv">Forget Me Not</li>
+    </ol>
+  </div>
+</article>
+
+<article class="release-card" data-tags="single">
+  <img class="release-card__cover" src="images/hey-tayo.jpg" alt="Hey Tayo cover" />
+  <div class="release-card__info">
+    <h3 class="release-card__name">Hey Tayo</h3>
+    <p class="release-card__meta">July 29, 2021 • Collaboration Single</p>
+    <ol class="tracklist">
+      <li class="tracklist__item tracklist__item--mv">Hey Tayo</li>
+    </ol>
+  </div>
+</article>
+
+<article class="release-card" data-tags="single">
+  <img class="release-card__cover" src="images/billy-poco.jpg" alt="Billy Poco cover" />
+  <div class="release-card__info">
+    <h3 class="release-card__name">Billy Poco</h3>
+    <p class="release-card__meta">August 11, 2021 • Collaboration Single</p>
+    <ol class="tracklist">
+      <li class="tracklist__item tracklist__item--mv">Billy Poco</li>
+      <li class="tracklist__item">Billy Poco (Inst.)</li>
+    </ol>
+  </div>
+</article>
+
+<article class="release-card" data-tags="korean-album">
+  <img class="release-card__cover" src="images/dimension-dilemma.jpg" alt="DIMENSION : DILEMMA cover" />
+  <div class="release-card__info">
+    <h3 class="release-card__name">DIMENSION : DILEMMA</h3>
+    <p class="release-card__meta">October 12, 2021 • 1st Full Album</p>
+    <ol class="tracklist">
+      <li class="tracklist__item">Intro : Whiteout</li>
+      <li class="tracklist__item tracklist__item--title">Tamed-Dashed</li>
+      <li class="tracklist__item">Upper Side Dreamin'</li>
+      <li class="tracklist__item">Just A Little Bit</li>
+      <li class="tracklist__item">Go Big or Go Home</li>
+      <li class="tracklist__item">Blockbuster (ft. Yeonjun of TXT)</li>
+      <li class="tracklist__item">Attention, please!</li>
+      <li class="tracklist__item">Interlude : Question</li>
+    </ol>
+  </div>
+</article>
+
+<article class="release-card" data-tags="korean-album">
+  <img class="release-card__cover" src="images/dimension-answer.jpg" alt="DIMENSION : ANSWER cover" />
+  <div class="release-card__info">
+    <h3 class="release-card__name">DIMENSION : ANSWER</h3>
+    <p class="release-card__meta">January 10, 2022 • 1st Repackage Album</p>
+    <ol class="tracklist">
+      <li class="tracklist__item">Intro : Whiteout</li>
+      <li class="tracklist__item tracklist__item--mv">Tamed-Dashed</li>
+      <li class="tracklist__item">Upper Side Dreamin'</li>
+      <li class="tracklist__item">Blessed-Cursed</li>
+      <li class="tracklist__item tracklist__item--mv">Polaroid Love</li>
+      <li class="tracklist__item">Outro : Day 2</li>
+    </ol>
+  </div>
+</article>
+
+<article class="release-card" data-tags="japanese-album">
+  <img class="release-card__cover" src="images/always.jpg" alt="Always cover" />
+  <div class="release-card__info">
+    <h3 class="release-card__name">Always</h3>
+    <p class="release-card__meta">February 22, 2022 • Japanese Single</p>
+    <ol class="tracklist">
+      <li class="tracklist__item tracklist__item--title">Always</li>
+    </ol>
+  </div>
+</article>
+
+<article class="release-card" data-tags="japanese-album">
+  <img class="release-card__cover" src="images/dimension-senkou.jpg" alt="DIMENSION : Senkou cover" />
+  <div class="release-card__info">
+    <h3 class="release-card__name">DIMENSION : 閃光 (Senkou)</h3>
+    <p class="release-card__meta">May 3, 2022 • Japanese Single</p>
+    <ol class="tracklist">
+      <li class="tracklist__item tracklist__item--title">Tamed-Dashed [Japanese Ver.]</li>
+      <li class="tracklist__item">Drunk-Dazed [Japanese Ver.]</li>
+      <li class="tracklist__item tracklist__item--mv">Always</li>
+    </ol>
+  </div>
+</article>
+
+<article class="release-card" data-tags="korean-album">
+  <img class="release-card__cover" src="images/manifesto-day-1.jpg" alt="MANIFESTO : DAY 1 cover" />
+  <div class="release-card__info">
+    <h3 class="release-card__name">MANIFESTO : DAY 1</h3>
+    <p class="release-card__meta">July 4, 2022 • 3rd Mini Album</p>
+    <ol class="tracklist">
+      <li class="tracklist__item">WALK THE LINE</li>
+      <li class="tracklist__item tracklist__item--title">Future Perfect (Pass the MIC)</li>
+      <li class="tracklist__item tracklist__item--mv">ParadoXXX Invasion</li>
+      <li class="tracklist__item">TFW (That Feeling When)</li>
+      <li class="tracklist__item">SHOUT OUT</li>
+      <li class="tracklist__item">Foreshadow</li>
+    </ol>
+  </div>
+</article>
+
+<article class="release-card" data-tags="single">
+  <img class="release-card__cover" src="images/i-need-the-light.jpg" alt="I Need the Light cover" />
+  <div class="release-card__info">
+    <h3 class="release-card__name">I Need the Light</h3>
+    <p class="release-card__meta">August 12, 2022 • Original Soundtrack</p>
+    <ol class="tracklist">
+      <li class="tracklist__item tracklist__item--title">I Need the Light</li>
+      <li class="tracklist__item">I Need the Light (Inst.)</li>
+    </ol>
+  </div>
+</article>
+
+
   
       <!-- One In A Billion -->
       <article class="release-card">
@@ -76,6 +224,21 @@
           </ol>
         </div>
       </article>
+
+
+         <!-- Make The Change -->
+      <article class="release-card">
+        <img class="release-card__cover" src="images/make-the-change.jpg" alt="Make The Change cover" />
+        <div class="release-card__info">
+          <h3 class="release-card__name">Make The Change</h3>
+          <p class="release-card__meta">Release Date: October 12, 2022 • Japanese Single</p>
+          <ol class="tracklist">
+            <li class="tracklist__item tracklist__item--title" data-tags="title">Make The Change</li>
+          </ol>
+        </div>
+      </article>
+  
+
   
       <!-- 定め (Sadame) -->
       <article class="release-card">
@@ -97,18 +260,7 @@
         </div>
       </article>
   
-      <!-- Make The Change -->
-      <article class="release-card">
-        <img class="release-card__cover" src="images/make-the-change.jpg" alt="Make The Change cover" />
-        <div class="release-card__info">
-          <h3 class="release-card__name">Make The Change</h3>
-          <p class="release-card__meta">Release Date: October 12, 2022 • Japanese Single</p>
-          <ol class="tracklist">
-            <li class="tracklist__item tracklist__item--title" data-tags="title">Make The Change</li>
-          </ol>
-        </div>
-      </article>
-  
+   
       <!-- Dark Blood -->
       <article class="release-card">
         <img class="release-card__cover" src="images/dark-blood.jpg" alt="Dark Blood cover" />
@@ -245,7 +397,7 @@
   
       <!-- Memorabilia -->
       <article class="release-card">
-        <img class="release-card__cover" src="images/memorabilia.jpg" alt="MEMORABILIA cover" />
+        <img class="release-card__cover" src="images/discography-memorabilia.jpg" alt="MEMORABILIA cover" />
         <div class="release-card__info">
           <h3 class="release-card__name">MEMORABILIA</h3>
           <p class="release-card__meta">Release Date: May 13, 2024 • Special Album (DARK MOON)</p>
@@ -439,6 +591,44 @@
           </ol>
         </div>
       </article>
+
+
+<article class="release-card incoming-release">
+  <div class="incoming-badge">COMING SOON</div>
+  <img class="release-card__cover" src="images/the-sin-vanish.jpg" alt="THE SIN : VANISH cover" />
+  
+  <div class="release-card__info">
+    <h3 class="release-card__name">THE SIN : VANISH</h3>
+    <p class="release-card__meta">Release Date: January 16, 2026 • Full Album</p>
+    
+    <div class="countdown-container">
+      <div class="countdown-box"><span id="days">00</span><label>Days</label></div>
+      <div class="countdown-box"><span id="hours">00</span><label>Hours</label></div>
+      <div class="countdown-box"><span id="minutes">00</span><label>Minutes</label></div>
+      <div class="countdown-box"><span id="seconds">00</span><label>Seconds</label></div>
+    </div>
+
+   <a href="https://open.spotify.com/prerelease/0R4038bRmTF8RcLkwHEZaD?si=446630cc2a1d4577" target="_blank" style="text-decoration: none;">
+  <button class="pre-save-btn">PRE-SAVE ON SPOTIFY</button>
+</a>
+
+    <ol class="tracklist" style="margin-top: 20px; border-top: 1px solid rgba(0, 170, 255, 0.1); padding-top: 15px;">
+      <ol class="tracklist tracklist--incoming">
+  <li class="tracklist__item ">?????</li>
+  <li class="tracklist__item">?????</li>
+  <li class="tracklist__item">?????</li>
+  <li class="tracklist__item">?????</li>
+  <li class="tracklist__item">?????</li>
+  <li class="tracklist__item">?????</li>
+  <li class="tracklist__item">?????</li>
+  <li class="tracklist__item">?????</li>
+  <li class="tracklist__item">?????</li>
+  <li class="tracklist__item">?????</li>
+  <li class="tracklist__item">?????</li>
+</ol>
+    </ol>
+  </div>
+</article>
   
     </div>
   </section>
