@@ -252,7 +252,7 @@
 
 .scroll-pijl {
     position: absolute;
-    bottom: -350px;            
+    bottom: -260px;            
     left: 50%;
     transform: translateX(-50%);
     display: flex;

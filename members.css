@@ -86,6 +86,7 @@
   letter-spacing: .12em;
   text-transform: uppercase;
   font-weight: 900;
+  font: center;
 
   background: linear-gradient(135deg, #fff 0%, rgba(255,120,190,.95) 100%);
   -webkit-background-clip: text;
@@ -375,11 +376,26 @@
   gap: 10px;
 }
 
-.bm-image-scroll{
-  overflow: hidden;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.03);
+/* Verberg de slider (scrollbar) voor de gallerij */
+/* Selecteer de specifieke Moonlight scroll container */
+/* Richt je op de specifieke containers EN hun scrollbars */
+.bm-image-scroll, 
+.gallery-shell, 
+.image-scroll-container {
+    -ms-overflow-style: none !important;  /* IE and Edge */
+    scrollbar-width: none !important;     /* Firefox */
+    overflow-x: scroll !important;        /* Zorg dat scrollen wel blijft werken */
+}
+
+/* De Webkit variant voor Chrome, Safari en Opera */
+.bm-image-scroll::-webkit-scrollbar,
+.gallery-shell::-webkit-scrollbar,
+.image-scroll-container::-webkit-scrollbar,
+#jungwon-strip::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
 }
 
 .bm-image-strip{
@@ -399,11 +415,13 @@
 }
 
 .bm-image-strip img{
-  height: 160px;
+  height: 300px;
   width: auto;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,.12);
   box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  display: flex;
+  gap: 24px;
 }
 
 .bm-slide-btn{
@@ -553,4 +571,55 @@
     transform: translateY(-3px);
     box-shadow: 0 0 15px rgba(255, 120, 190, 0.4);
     cursor: default;
+}
+
+
+
+
+.bm-sticky-nav {
+  position: sticky;
+  top: 80px; /* Dit moet gelijk zijn aan de hoogte van je navbar */
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  padding: 15px 0;
+  pointer-events: none; /* Zorgt dat je nog door de achtergrond heen kunt klikken */
+}
+
+.bm-sticky-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  pointer-events: auto; /* Activeert de klikbaarheid voor de knop zelf */
+}
+
+.bm-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 13px;
+  font-family: 'Gilroy-Bold', sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.bm-back-link:hover {
+  background: rgba(255, 120, 185, 0.15);
+  border-color: rgba(255, 120, 185, 0.4);
+  color: white;
+  transform: translateX(-5px);
+  box-shadow: 0 0 20px rgba(255, 120, 185, 0.2);
+}
+
+.bm-icon {
+  font-size: 16px;
+  color: var(--accent-pink);
 }
