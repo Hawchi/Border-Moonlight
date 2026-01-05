@@ -1,11 +1,7 @@
-// ===========================
-// Navbar placeholder loader (optional)
-// ===========================
 (function loadNavbar() {
   const placeholder = document.getElementById("navbar-placeholder");
   if (!placeholder) return;
 
-  // If you already use <site-navbar> component, you can remove this.
   fetch("navbar.html")
     .then(r => r.text())
     .then(html => placeholder.innerHTML = html)
@@ -29,7 +25,7 @@ document.addEventListener("click", (e) => {
 });
 
 // ===========================
-// Stars canvas (falling + twinkle vibe)
+// Stars 
 // ===========================
 (function starsCanvas() {
   const canvas = document.getElementById("stars-canvas");

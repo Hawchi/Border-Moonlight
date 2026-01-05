@@ -1,8 +1,3 @@
-/* =========================
-   BORDER: MOONLIGHT THEME
-   Jungwon Profile Page
-========================= */
-
 :root{
   --bg: #070812;
   --text: rgba(245,245,255,.92);
@@ -32,7 +27,7 @@
   overflow-x: hidden;
 }
 
-/* stars */
+
 #stars-canvas{
   position: fixed;
   inset: 0;
@@ -41,7 +36,6 @@
   opacity: .75;
 }
 
-/* Pink moon overlay background */
 .pinkmoon-bg{
   position: fixed;
   inset: 0;
@@ -53,7 +47,6 @@
   filter: blur(0.2px);
 }
 
-/* make content above stars+moon */
 #navbar-placeholder,
 .bm-hero-profile,
 .bm-content{
@@ -61,7 +54,6 @@
   z-index: 5;
 }
 
-/* HERO */
 .bm-hero-profile{
   padding: 110px 24px 56px;
   text-align: center;
@@ -161,32 +153,31 @@
 
 .bm-basic-info {
   padding: 6px 10px;
-  text-align: center; /* Centreert alle tekst (p, strong) */
+  text-align: center; 
   display: flex;
   flex-direction: column;
-  align-items: center; /* Zorgt dat de inhoud verticaal in het midden blijft */
+  align-items: center; 
 }
 
 .bm-basic-info p {
   margin: 10px 0;
   opacity: .92;
   line-height: 1.4;
-  width: 100%; /* Zorgt dat de text-align: center over de volle breedte werkt */
+  width: 100%; 
 }
 
 .bm-basic-info strong{
   color: rgba(255,255,255,.92);
 }
 
-/* star divider */
 .bm-line-with-star {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   gap: 12px;
   align-items: center;
   margin: 12px 0 16px;
-  width: 100%; /* Vult de breedte van de info-sectie */
-  max-width: 300px; /* Optioneel: houdt de lijntjes compact rondom de ster */
+  width: 100%; 
+  max-width: 300px; 
 }
 
 .bm-line{
@@ -226,55 +217,50 @@
 }
 
 /* SHORTCUT */
-/* SHORTCUT - Nu gelijk aan de rest van de secties */
 .bm-shortcut {
-    max-width: 1100px; /* Precies gelijk aan .bm-content */
-    width: 100%;       /* Vult de beschikbare breedte van de grid */
+    max-width: 1100px; 
+    width: 100%;       
     margin: 0 auto;
     background: var(--glass);
     border: 1px solid var(--border);
     border-radius: 26px;
     box-shadow: var(--shadow);
     backdrop-filter: blur(12px);
-    padding: 24px 18px; /* Padding afgestemd op andere kaarten */
+    padding: 24px 18px; 
     box-sizing: border-box;
 }
 
-/* De rij instellen zodat alle 7 op één lijn passen */
 .bm-member-row {
     display: flex;
-    justify-content: space-between; /* Verdeelt de leden over de volledige breedte */
+    justify-content: space-between; 
     align-items: flex-start;
-    gap: 10px;         /* Kleine tussenruimte om alles passend te houden */
-    flex-wrap: nowrap; /* Forceert één lijn */
+    gap: 10px;         
+    flex-wrap: nowrap; 
     margin-top: 15px;
 }
 
-/* De thumb (foto + naam container) */
 .bm-member-thumb {
-    flex: 1;           /* Zorgt dat elk lid een gelijk deel van de breedte pakt */
+    flex: 1;          
     display: flex;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    min-width: 0;      /* Voorkomt dat flex-items breder worden dan de container */
+    min-width: 0;      
 }
 
-/* De afbeelding binnen de thumb */
 .bm-member-thumb img {
-    width: 100%;       /* Maakt de foto responsive binnen zijn flex-vakje */
-    max-width: 100px;  /* Maximale grootte voor balans op desktop */
-    aspect-ratio: 1 / 1; /* Houdt de foto's perfect vierkant */
+    width: 100%;       
+    max-width: 100px;  
+    aspect-ratio: 1 / 1; 
     border-radius: 20px;
     object-fit: cover;
     border: 2px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
 }
 
-/* Namen onder de foto's */
 .bm-member-name {
     margin-top: 10px;
-    font-size: 11px;   /* Iets kleiner voor betere fit op één lijn */
+    font-size: 11px;   
     letter-spacing: 1px;
     text-transform: uppercase;
     color: var(--muted);
@@ -283,24 +269,21 @@
 }
 
 
-/* Effect wanneer je over een lid hovert */
 .bm-member-thumb:hover img {
-    border-color: var(--pink); /* Roze border bij hover */
-    box-shadow: 0 0 15px var(--pink-soft); /* Zachte roze gloed */
-    transform: translateY(-5px); /* Subtiele lift zoals in je oude project */
+    border-color: var(--pink); 
+    box-shadow: 0 0 15px var(--pink-soft); 
+    transform: translateY(-5px); 
 }
 
-/* Stijl voor het actieve lid (waar je nu op de pagina bent) */
 .bm-member-thumb.is-active img {
-    border-color: var(--pink); /* Roze border voor actieve pagina */
-    box-shadow: 0 0 25px rgba(255, 120, 190, 0.6); /* Sterkere roze gloed voor focus */
-    border-width: 3px; /* Iets dikker om het verschil te laten zien */
+    border-color: var(--pink); 
+    box-shadow: 0 0 25px rgba(255, 120, 190, 0.6); 
+    border-width: 3px; 
 }
 
-/* De naam kleurt ook mee */
 .bm-member-thumb:hover .bm-member-name,
 .bm-member-thumb.is-active .bm-member-name {
-    color: var(--pink); /* Naam wordt roze bij hover of active */
+    color: var(--pink); 
     text-shadow: 0 0 10px var(--pink-soft);
     font-weight: bold;
 }
@@ -319,8 +302,8 @@
 }
 
 .bm-about-text {
-  font-size: 17px;              /* groter dan standaard */
-  line-height: 1.9;             /* luchtiger */
+  font-size: 17px;             
+  line-height: 1.9;             
   letter-spacing: 0.2px;
   color: rgba(240, 240, 250, 0.9);
   max-width: 720px;
@@ -376,18 +359,14 @@
   gap: 10px;
 }
 
-/* Verberg de slider (scrollbar) voor de gallerij */
-/* Selecteer de specifieke Moonlight scroll container */
-/* Richt je op de specifieke containers EN hun scrollbars */
 .bm-image-scroll, 
 .gallery-shell, 
 .image-scroll-container {
-    -ms-overflow-style: none !important;  /* IE and Edge */
-    scrollbar-width: none !important;     /* Firefox */
-    overflow-x: scroll !important;        /* Zorg dat scrollen wel blijft werken */
+    -ms-overflow-style: none !important;  
+    scrollbar-width: none !important;    
+    overflow-x: scroll !important;        
 }
 
-/* De Webkit variant voor Chrome, Safari en Opera */
 .bm-image-scroll::-webkit-scrollbar,
 .gallery-shell::-webkit-scrollbar,
 .image-scroll-container::-webkit-scrollbar,
@@ -442,7 +421,6 @@
   border-color: rgba(255,120,190,.28);
 }
 
-/* Responsive */
 @media (max-width: 900px){
   .bm-profile-info{
     grid-template-columns: 1fr;
@@ -456,13 +434,9 @@
 }
 
 
-
-
-
-
 .bm-member-intro {
     position: relative;
-    height: 100vh; /* Vult het hele scherm bij het laden */
+    height: 100vh; 
     width: 100%;
     display: flex;
     align-items: center;
@@ -473,31 +447,28 @@
 .bm-video-container {
     position: absolute;
     inset: 0;
-    z-index: 1; /* Onderste laag */
+    z-index: 1; 
 }
 
 .bm-video-element {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Vult het scherm zonder vervorming */
+    object-fit: cover; 
 }
 
 .bm-video-overlay {
     position: absolute;
     inset: 0;
-    /* Verloop zorgt voor een zachte overgang naar de rest van de pagina */
     background: linear-gradient(to bottom, rgba(7,8,18,0.2) 0%, rgba(7,8,18,1) 100%);
     z-index: 2;
 }
 
 .bm-intro-content {
     position: relative;
-    z-index: 3; /* Boven de video en overlay */
+    z-index: 3; 
     text-align: center;
 }
 
-/* De Scroll Hint onderaan het scherm */
-/* De container van de scroll hint */
 .bm-member-scroll {
     position: absolute;
     bottom: 30px;
@@ -505,34 +476,31 @@
     transform: translateX(-50%);
     z-index: 10;
     text-align: center;
-    pointer-events: none; /* Zorgt dat de tekst niet in de weg zit bij het klikken */
+    pointer-events: none; 
 }
 
-/* De tekst zelf naar roze aanpassen */
 .bm-member-scroll span {
     display: block;
     font-family: 'Baloo Bhaijaan', sans-serif;
     font-size: 14px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--pink); /* Gebruikt je gedefinieerde roze kleur */
-    text-shadow: 0 0 10px rgba(255, 120, 190, 0.5); /* Voegt een zachte roze gloed toe */
+    color: var(--pink); 
+    text-shadow: 0 0 10px rgba(255, 120, 190, 0.5); 
     margin-bottom: 8px;
 }
 
-/* Het pijltje naar roze aanpassen */
 .bm-arrow {
     width: 15px;
     height: 15px;
     margin: 0 auto;
-    border-right: 2px solid var(--pink); /* Pijltje krijgt de roze kleur */
+    border-right: 2px solid var(--pink); 
     border-bottom: 2px solid var(--pink);
     transform: rotate(45deg);
-    animation: arrowBounce 2s infinite; /* Behoudt de beweging naar beneden */
+    animation: arrowBounce 2s infinite; 
     filter: drop-shadow(0 0 5px rgba(255, 120, 190, 0.4));
 }
 
-/* Animatie voor de beweging */
 @keyframes arrowBounce {
     0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(45deg); }
     40% { transform: translateY(-10px) rotate(45deg); }
@@ -553,10 +521,10 @@
 
 .bm-lore-tags li {
   padding: 8px 16px;
-  border-radius: 999px; /* Maakt ze pil-vormig */
+  border-radius: 999px; 
   border: 1px solid var(--border);
-  background: var(--glass-2); /* Subtiele doorzichtige achtergrond */
-  color: var(--pink); /* De roze kleur voor de tekst */
+  background: var(--glass-2); 
+  color: var(--pink); 
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -566,7 +534,7 @@
 }
 
 .bm-lore-tags li:hover {
-    background: var(--pink-soft); /* Lichtroze gloed bij hover */
+    background: var(--pink-soft); 
     border-color: var(--pink);
     transform: translateY(-3px);
     box-shadow: 0 0 15px rgba(255, 120, 190, 0.4);
@@ -578,19 +546,19 @@
 
 .bm-sticky-nav {
   position: sticky;
-  top: 80px; /* Dit moet gelijk zijn aan de hoogte van je navbar */
+  top: 80px; 
   left: 0;
   width: 100%;
   z-index: 50;
   padding: 15px 0;
-  pointer-events: none; /* Zorgt dat je nog door de achtergrond heen kunt klikken */
+  pointer-events: none; 
 }
 
 .bm-sticky-inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
-  pointer-events: auto; /* Activeert de klikbaarheid voor de knop zelf */
+  pointer-events: auto; 
 }
 
 .bm-back-link {
@@ -622,4 +590,127 @@
 .bm-icon {
   font-size: 16px;
   color: var(--accent-pink);
+}
+
+
+/* NIKI  */
+
+#title-niki {
+  display: block;
+  width: 100%;
+  text-align: center;
+  transform: translateX(50px); 
+}
+
+.bm-profile--niki .bm-underline {
+  margin: 10px auto !important;
+  transform: translateX(20px);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  #title-niki, 
+  .bm-profile--niki .bm-underline {
+      transform: translateX(10px);
+  }
+}
+
+/* heeseung  */
+.bm-profile--heeseung #title-heeseung {
+  display: inline-block !important;  
+  width: auto !important;           
+  margin-left: 75px !important;    
+  position: relative !important;
+  text-align: center;
+}
+
+
+.bm-profile--heeseung .bm-underline {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  transform: translateX(20px) !important; 
+}
+
+/* Responsiveness */
+@media (max-width: 767px) {
+  .bm-profile--heeseung #title-heeseung, 
+  .bm-profile--heeseung .bm-underline {
+      transform: translateX(8px);
+  }
+}
+
+/* JUNGWON */
+#title-jungwon .bm-name-text {
+  margin-left: 0.8em;
+}
+
+/* jay */
+#title-jay .bm-name-text {
+  margin-left: 1em;
+}
+
+/* jake */
+#title-jake .bm-name-text {
+  margin-left: 1.25em;
+}
+
+/* SUNGHOON */
+
+.bm-profile--sunghoon #title-sunghoon {
+  display: inline-block !important;  
+  width: auto !important;           
+  margin-left: 50px !important;    
+  position: relative !important;
+  text-align: center;
+}
+
+.bm-profile--sunghoon .bm-underline {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  transform: translateX(25px) !important; 
+}
+
+/* Responsiveness */
+@media (max-width: 767px) {
+  .bm-profile--sunghoon #title-sunghoon {
+      margin-left: 0 !important;
+      transform: translateX(10px); 
+  }
+  .bm-profile--sunghoon .bm-underline {
+      transform: translateX(0) !important;
+  }
+}
+
+/* SUNOO */
+
+.bm-profile--sunoo .bm-profile-image {
+  max-width: 330px !important; 
+  height: auto !important;
+  margin-left: 40px !important; 
+  display: inline-block !important;
+}
+.bm-profile--sunoo #title-sunoo {
+display: inline-block !important;  
+width: auto !important;           
+margin-left: 130px !important; 
+position: relative !important;
+text-align: center;
+}
+
+.bm-profile--sunoo .bm-underline {
+margin-left: auto !important;
+margin-right: auto !important;
+transform: translateX(18px) !important; 
+}
+
+/* Responsiveness */
+@media (max-width: 767px) {
+.bm-profile--sunoo .bm-profile-image {
+    max-width: 280px !important; 
+}
+.bm-profile--sunoo #title-sunoo,
+.bm-profile--sunoo .bm-underline {
+    margin-left: 0 !important;
+    transform: translateX(0) !important;
+}
 }
