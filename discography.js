@@ -152,17 +152,25 @@ window.addEventListener('DOMContentLoaded', () => {
     ];
 
     function playRandomVideo() {
-
-        const randomVideo = videoPool[Math.floor(Math.random() * videoPool.length)];
+        const lastVideo = localStorage.getItem('lastPlayedVideo');
+        const availableVideos = videoPool.filter(v => v !== lastVideo);
+        const randomVideo = availableVideos[Math.floor(Math.random() * availableVideos.length)];
         
         if (source && video) {
+            localStorage.setItem('lastPlayedVideo', randomVideo);
             source.src = randomVideo;
             video.load();
-            video.muted = true; 
-            video.play().catch(error => console.log("Playback interaction needed"));
+
+            video.play().then(() => {
+                video.muted = false; 
+            }).catch(error => {
+                console.log("Autoplay with audio blocked. Muting for initial start.");
+                video.muted = true;
+                video.play();
+            });
         }
     }
-
+    
     playRandomVideo();
 
     video.addEventListener('ended', () => {
