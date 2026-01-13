@@ -34,16 +34,6 @@
     pointer-events:none;
   }
 
-  /* Voortgangsbalk */
-  .voortgang{
-    position:fixed; inset:0 0 auto 0; height:3px; z-index:5;
-    background:linear-gradient(90deg, rgba(255,255,255,.08), transparent);
-  }
-  .voortgang .balk{
-    display:block; height:100%; width:0%;
-    background:linear-gradient(90deg, #f4e3ff, #c2c7d6);
-  }
-
   /* Navigatie */
   .navigatie{
     position:sticky; top:0; z-index:6;

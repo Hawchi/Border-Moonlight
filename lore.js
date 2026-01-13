@@ -1,7 +1,4 @@
 (function () {
-  // -------------------------
-  // 1) Jaar in footer
-  // -------------------------
   try {
     const jaar = document.getElementById('jaar');
     if (jaar) {
@@ -11,34 +8,6 @@
     console.warn('[lore.js] Jaar updaten mislukt:', e);
   }
 
-  // -------------------------
-  // 2) Voortgangsbalk bovenin
-  // -------------------------
-  try {
-    const balk = document.querySelector('.voortgang .balk');
-
-    function updateProgress() {
-      if (!balk) return;
-      const h = document.documentElement;
-      if (!h || h.scrollHeight <= h.clientHeight) {
-        balk.style.width = '0%';
-        return;
-      }
-      const scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight);
-      const pct = Math.max(0, Math.min(1, scrolled)) * 100;
-      balk.style.width = pct + '%';
-    }
-
-    document.addEventListener('scroll', updateProgress, { passive: true });
-    window.addEventListener('resize', updateProgress);
-    updateProgress();
-  } catch (e) {
-    console.warn('[lore.js] Voortgangsbalk error:', e);
-  }
-
-  // -------------------------
-  // 3) Actieve zijmenu-link
-  // -------------------------
   try {
     const secties = Array.from(document.querySelectorAll('.hoofdstuk'));
     const links = Array.from(document.querySelectorAll('.fases a'));
