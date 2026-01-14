@@ -179,7 +179,7 @@
 .intro__foto {
   position: absolute;
   inset: 0;
-  background-image: url('../images/enhypen-groep.jpg'); 
+  background-image: url("images/enhypen-groep.jpg");
   background-size: cover;
   background-position: center 20%;
   z-index: 1;
