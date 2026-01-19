@@ -1,23 +1,3 @@
-const filterButtons = document.querySelectorAll(".filter-btn");
-const cards = document.querySelectorAll(".member-card");
-const searchInput = document.getElementById("memberSearch");
-
-let activeFilter = "all";
-
-function applyFilters(){
-  const q = (searchInput?.value || "").trim().toLowerCase();
-
-  cards.forEach(card => {
-    const group = card.dataset.group || "all";
-    const name = (card.dataset.name || "").toLowerCase();
-
-    const matchFilter = (activeFilter === "all") || (group === activeFilter);
-    const matchSearch = !q || name.includes(q);
-
-    card.classList.toggle("is-hidden", !(matchFilter && matchSearch));
-  });
-}
-
 filterButtons.forEach(btn => {
   btn.addEventListener("click", () => {
     filterButtons.forEach(b => b.classList.remove("is-active"));
