@@ -1,17 +1,3 @@
-filterButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    filterButtons.forEach(b => b.classList.remove("is-active"));
-    btn.classList.add("is-active");
-    activeFilter = btn.dataset.filter;
-    applyFilters();
-  });
-});
-
-searchInput?.addEventListener("input", applyFilters);
-
-applyFilters();
-
-/* ===== Falling Stars  ===== */
 const canvas = document.getElementById("stars-canvas");
 const ctx = canvas?.getContext("2d");
 
