@@ -1,16 +1,3 @@
-(function loadNavbar() {
-  const placeholder = document.getElementById("navbar-placeholder");
-  if (!placeholder) return;
-
-  fetch("navbar.html")
-    .then(r => r.text())
-    .then(html => placeholder.innerHTML = html)
-    .catch(() => {});
-})();
-
-// ===========================
-// Slider controls
-// ===========================
 document.addEventListener("click", (e) => {
   const btn = e.target.closest(".bm-slide-btn");
   if (!btn) return;
@@ -24,9 +11,6 @@ document.addEventListener("click", (e) => {
   strip.scrollBy({ left: amount, behavior: "smooth" });
 });
 
-// ===========================
-// Stars 
-// ===========================
 (function starsCanvas() {
   const canvas = document.getElementById("stars-canvas");
   if (!canvas) return;
