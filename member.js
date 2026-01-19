@@ -66,25 +66,19 @@ document.addEventListener("click", (e) => {
     ctx.clearRect(0, 0, w, h);
 
     for (const s of stars) {
-      // twinkle
       s.a += s.tw;
       if (s.a > 0.95 || s.a < 0.15) s.tw *= -1;
-
-      // drift / fall
       s.x += s.vx;
       s.y += s.vy;
-
       if (s.y > h + 20) { s.y = -20; s.x = rand(0, w); }
       if (s.x > w + 20) s.x = -20;
       if (s.x < -20) s.x = w + 20;
 
-      // star glow (soft)
       ctx.beginPath();
       ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(255,255,255,${s.a})`;
       ctx.fill();
 
-      // tiny pink sparkle sometimes
       if (Math.random() < 0.003) {
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r * 2.4, 0, Math.PI * 2);
