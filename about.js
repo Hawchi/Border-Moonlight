@@ -40,7 +40,6 @@ function draw(){
     s.x += s.vx;
     s.a += Math.sin(Date.now() * s.tw) * 0.002;
 
-    // respawn
     if(s.y > canvas.height + 20){
       Object.assign(s, spawnStar());
       s.y = -10;
