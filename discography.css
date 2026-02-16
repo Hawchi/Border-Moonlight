@@ -840,3 +840,177 @@ body {
 .spotify-modal__close{
   right: 37.5px !important;
 }
+
+
+
+/* =========================
+   ✅ RESPONSIVE PATCH (plak onderaan)
+   ========================= */
+
+/* voorkom horizontaal scrollen door fit-content + padding combos */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Intro: wat meer ademruimte op klein scherm */
+.enhypen-intro-content {
+  padding: 0 16px;
+}
+
+.enhypen-intro-tagline {
+  letter-spacing: 0.18em;
+  font-size: clamp(0.85rem, 2.6vw, 1.1rem);
+}
+
+/* SOUND button: niet buiten beeld */
+.enhypen-audio-control {
+  right: 16px;
+  bottom: 90px;
+  padding: 10px 14px;
+}
+
+/* Tracklist: pills mogen niet over de rand */
+.tracklist__item {
+  max-width: 100%;
+  width: fit-content;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Subtitle + title wat zachter op mobiel */
+.discography__subtitle {
+  padding: 0 12px;
+  line-height: 1.4;
+}
+
+.discography {
+  padding: 90px 16px 60px;
+}
+
+
+/* =========================
+   TABLET (<= 1024px)
+   ========================= */
+@media (max-width: 1024px) {
+  .discography__grid {
+    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .release-card__info {
+    padding: 14px 14px 16px;
+  }
+
+  .release-card__name {
+    font-size: 18px;
+  }
+
+  .enhypen-audio-control {
+    bottom: 80px;
+  }
+
+  /* modal iets kleiner */
+  .spotify-modal__panel {
+    width: min(900px, 94vw);
+    height: min(640px, 86vh);
+    padding: 54px 16px 16px !important;
+  }
+}
+
+
+/* =========================
+   MOBILE (<= 768px)
+   ========================= */
+@media (max-width: 768px) {
+  .discography__title {
+    letter-spacing: 0.02em;
+  }
+
+  .discography__filters {
+    gap: 8px;
+  }
+
+  .filter-btn {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  /* cards: cover niet te hoog "voelt" op mobiel */
+  .release-card__cover {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* scroll hint iets hoger zodat hij niet botst */
+  .enhypen-scroll-hint {
+    bottom: 24px;
+  }
+
+  /* sound knop beter op mobiel */
+  .enhypen-audio-control {
+    bottom: 70px;
+    right: 12px;
+    gap: 8px;
+  }
+
+  .mute-text {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  /* modal mobile */
+  .spotify-modal__panel {
+    width: 94vw;
+    height: 82vh;
+    border-radius: 18px !important;
+  }
+
+  .spotify-modal__close {
+    top: 10px;
+    right: 12px !important;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE (<= 480px)
+   ========================= */
+@media (max-width: 480px) {
+  .discography {
+    padding: 80px 14px 50px;
+  }
+
+  .discography__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .release-card {
+    border-radius: 18px;
+  }
+
+  .release-card__name {
+    font-size: 17px;
+  }
+
+  .release-card__meta {
+    font-size: 13px;
+  }
+
+  .tracklist__item {
+    font-size: 14px;
+  }
+
+  /* intro titel net iets compacter */
+  .enhypen-intro-title {
+    letter-spacing: 0.10em;
+  }
+
+  .enhypen-intro-tagline {
+    letter-spacing: 0.14em;
+  }
+
+  /* sound knop: maak hem “compact pill” */
+  .enhypen-audio-control {
+    padding: 9px 12px;
+  }
+}
+
