@@ -74,40 +74,253 @@ body{
   color:var(--muted);
 }
 
-/* -----------------------------
-   4) 
------------------------------ */
+/* ==============================
+   BORDER: MOONLIGHT — NAVBAR CSS
+   Desktop = normale navbar
+   <=1100px = burger menu (non-transparent panel)
+   ============================== */
+
+/* --- Header / desktop base --- */
 header.nav{
-  position:fixed; inset:0 0 auto 0; height:70px; z-index:30;
-  border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg, rgba(10,10,11,.65), rgba(10,10,11,.25));
-  backdrop-filter:saturate(160%) blur(10px);
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 70px;
+  z-index: 30;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(10,10,11,.65), rgba(10,10,11,.25));
+  backdrop-filter: saturate(160%) blur(10px);
 }
-.nav__inner{ height:70px; display:flex; align-items:center; justify-content:space-between; }
+
+.nav__inner{
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .logo{
-  font-family:'Prata', serif;
-  font-size:20px; line-height:1;
-  text-transform:uppercase;
-  letter-spacing:.34em;
-  padding-left:2px; white-space:nowrap;
-  background:linear-gradient(100deg,#f5f7ff 10%,#aeb4c2 40%,#ffffff 60%,#8f95a3 90%);
-  -webkit-background-clip:text; background-clip:text; color:transparent;
-  filter:drop-shadow(0 0 .4px rgba(255,255,255,.35));
+  font-family: 'Prata', serif;
+  font-size: 20px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: .34em;
+  padding-left: 2px;
+  white-space: nowrap;
+  background: linear-gradient(100deg,#f5f7ff 10%,#aeb4c2 40%,#ffffff 60%,#8f95a3 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 .4px rgba(255,255,255,.35));
 }
 
-nav ul{ display:flex; gap:22px; list-style:none; margin:0; padding:0; }
-nav a{ color:var(--ink); font-size:.92rem; text-decoration:none; opacity:.86; }
-nav a:hover{ opacity:1; }
+/* Desktop links */
+nav ul{
+  display: flex;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav a{
+  color: var(--ink);
+  font-size: .92rem;
+  text-decoration: none;
+  opacity: .86;
+}
+nav a:hover{ opacity: 1; }
 
+/* active link (van jouw JS) */
+nav a.is-active{
+  opacity: 1;
+  text-shadow: 0 0 18px rgba(255,119,183,.18);
+}
+
+/* CTA (als je die ergens gebruikt) */
 .cta-btn{
-  padding:10px 16px; border-radius:999px;
-  color:var(--ink);
-  border:1px solid var(--accent-2);
-  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.01));
-  backdrop-filter:blur(6px);
-  box-shadow:var(--shadow);
+  padding: 10px 16px;
+  border-radius: 999px;
+  color: var(--ink);
+  border: 1px solid var(--accent-2);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.01));
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow);
 }
+
+/* accessibility helper */
+.sr-only{
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- Burger button (default hidden on desktop) --- */
+.nav__toggle{
+  display: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.06);
+  color: var(--ink);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+  position: relative;
+  font-size: 0; /* verberg tekst */
+}
+.nav__toggle:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.26);
+}
+
+/* 3 streepjes */
+.nav__toggle::before,
+.nav__toggle::after,
+.nav__toggle span{
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(255,255,255,.92);
+  transition: transform .25s ease, top .25s ease, opacity .2s ease;
+}
+.nav__toggle::before{ top: 14px; }
+.nav__toggle span{ top: 21px; }
+.nav__toggle::after{ top: 28px; }
+
+/* overlay achter menu */
+.nav__overlay{
+  position: fixed;
+  inset: 70px 0 0 0;
+  background: rgba(0,0,0,.62);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+  z-index: 28;
+}
+
+
+/* ======= BREAKPOINT: burger aan op kleinere schermen ======= */
+@media (max-width: 1100px){
+
+  /* toon hamburger */
+  .nav__toggle{
+    display: inline-block;
+  }
+
+  /* verberg de desktop inline menu look */
+  header.nav nav ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* maak nav een dropdown panel */
+  header.nav nav.nav__menu{
+    position: fixed;
+    top: 70px;
+    left: 12px;
+    right: 12px;
+    margin: 0 auto;
+    padding: 16px;
+    border-radius: 18px;
+
+    /* ✅ non-transparent zodat tekst nooit overlapt */
+    background: #0b0d16;
+
+    border: 1px solid rgba(255,255,255,.08);
+    box-shadow:
+      0 30px 90px rgba(0,0,0,.85),
+      0 0 22px rgba(255,119,183,.08);
+
+    transform: translateY(-12px) scale(.98);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .25s ease, opacity .25s ease;
+    z-index: 29;
+  }
+
+  header.nav nav.nav__menu ul{
+    margin: 0;
+    padding: 0;
+  }
+
+  /* links als stevige dark pills */
+  header.nav nav.nav__menu a{
+    display: block;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.06);
+    color: rgba(255,255,255,.92);
+    letter-spacing: .04em;
+    transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+  }
+
+  header.nav nav.nav__menu a:hover{
+    transform: translateY(-2px);
+    background: rgba(255,119,183,.10);
+    border-color: rgba(255,119,183,.22);
+    box-shadow: 0 0 14px rgba(255,119,183,.14);
+  }
+
+  /* active */
+  header.nav nav.nav__menu a.is-active{
+    background: rgba(255,119,183,.14);
+    border-color: rgba(255,119,183,.28);
+    box-shadow: 0 0 0 3px rgba(255,119,183,.10);
+  }
+
+  /* open state (jouw JS zet header.nav.is-open) */
+  header.nav.is-open nav.nav__menu{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+  header.nav.is-open .nav__overlay{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* hamburger -> X animatie */
+  header.nav.is-open .nav__toggle::before{
+    top: 21px;
+    transform: rotate(45deg);
+  }
+  header.nav.is-open .nav__toggle span{
+    opacity: 0;
+  }
+  header.nav.is-open .nav__toggle::after{
+    top: 21px;
+    transform: rotate(-45deg);
+  }
+
+  /* logo compacter */
+  .logo{
+    font-size: 16px;
+    letter-spacing: .22em;
+    max-width: 70vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* extra klein */
+@media (max-width: 480px){
+  header.nav nav.nav__menu{
+    left: 10px;
+    right: 10px;
+    padding: 14px;
+  }
+}
+
 
 /* -----------------------------
    5) 
