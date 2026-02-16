@@ -1,0 +1,450 @@
+/* Vault Layout */
+.memory-vault {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 80px); /* 80px = hoogte navbar */
+    padding-top: 40px; /* optioneel extra fine-tuning */    background: #050505;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* De vignet maakt de hoeken donker zoals op de foto */
+.vignette-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0) 20%, rgba(0,0,0,0.95) 90%);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.vault-header {
+    position: relative;
+    z-index: 6;
+    text-align: center;
+    margin-bottom: -270px; /* ruimte tussen tekst en filmrol */
+    z-index: 6;
+    width: 100%;
+    text-align: center;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 8px;
+    font-size: 0.8rem;
+}
+
+/* Film Strips */
+.strip-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    transform: translateY(-60px) rotate(-2deg) scale(1.1);
+}
+
+.film-strip {
+    display: flex;
+    white-space: nowrap;
+    border-top: 12px dashed #1a1a1a;
+    border-bottom: 12px dashed #1a1a1a;
+    padding: 15px 0;
+    background: rgba(20,20,20,0.5);
+}
+
+.film-item {
+    height: 220px;
+    width: 320px;
+    object-fit: cover;
+    margin: 0 10px;
+    filter: grayscale(1) contrast(1.2) brightness(0.8);
+    transition: all 0.4s ease;
+}
+
+.film-item:hover {
+    filter: grayscale(0.2) brightness(1);
+    transform: scale(1.05);
+}
+
+/* Animatie */
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.scroll-left {
+    animation: scroll 35s linear infinite;
+}
+
+.scroll-right {
+    animation: scroll 45s linear infinite reverse;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+    color: #444;
+    font-size: 10px;
+    letter-spacing: 3px;
+    z-index: 6;
+}
+
+/* Zorg dat zowel img als video er hetzelfde uitzien in de strip */
+.film-item {
+    height: 220px;
+    width: 320px;
+    object-fit: cover;
+    margin: 0 10px;
+    border: 2px solid #000;
+    filter: grayscale(1) brightness(0.7); /* De vintage film look */
+    background: #111;
+}
+
+/* De roze titels en labels van je About pagina */
+.intro__titel {
+  background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(255, 119, 183, 0.4);
+}
+
+.label {
+    background: rgba(255, 120, 185, 0.12); 
+    border: 1px solid rgba(255, 120, 185, 0.25);
+    color: rgba(255, 200, 225, 0.9);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 11px;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+}
+
+/* De Video Cards in de Library Grid (Member-card stijl) */
+.video-card {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(255, 120, 185, 0.2);
+}
+
+
+/* ===== Page base ===== */
+.bm-videos {
+    background: #050505;
+    color: rgba(255,255,255,0.85);
+    min-height: 100vh;
+  }
+  
+  /* Wrapper rond de library */
+  .bm-library-grid-wrapper{
+    width: min(1200px, 100%);
+    margin: 0 auto;
+    padding: clamp(24px, 4vw, 56px) clamp(16px, 3vw, 32px);
+  }
+  
+  /* Filters */
+  .library-filters{
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  
+  .filter-btn{
+    border: 1px solid rgba(255,120,185,0.25);
+    background: rgba(255,120,185,0.10);
+    color: rgba(255,200,225,0.9);
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  .filter-btn:hover{
+    transform: translateY(-2px);
+    border-color: rgba(255,120,185,0.45);
+  }
+  
+  .filter-btn.active{
+    border-color: rgba(255,120,185,0.8);
+    box-shadow: 0 0 25px rgba(255,120,185,0.15);
+  }
+  
+  /* ===== Grid layout ===== */
+  .video-display-grid{
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  
+  /* Card consistent size */
+  .video-card{
+    border-radius: 24px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.04); /* fallback */
+    border: 1px solid rgba(255,255,255,0.10);
+    backdrop-filter: blur(12px);
+    transition: 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+  
+  .video-card:hover{
+    transform: translateY(-8px);
+    border-color: rgba(255,120,185,0.7);
+    box-shadow: 0 10px 30px rgba(255, 120, 185, 0.18);
+  }
+  
+  /* Thumbnail met vaste aspect ratio */
+  .video-thumb{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #111;
+    overflow: hidden;
+  }
+  
+  .video-thumb img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(0.25) contrast(1.15) brightness(0.85);
+    transform: scale(1.02);
+    transition: 0.25s ease;
+  }
+  
+  .video-card:hover .video-thumb img{
+    filter: grayscale(0.05) brightness(1);
+    transform: scale(1.06);
+  }
+  
+  .video-info{
+    padding: 16px 16px 18px;
+    display: grid;
+    gap: 8px;
+  }
+  
+  /* Als je deze classnames gebruikt in JS */
+  .member-card__tag{
+    display: inline-flex;
+    width: fit-content;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: rgba(255,120,185,0.10);
+    border: 1px solid rgba(255,120,185,0.25);
+    color: rgba(255,200,225,0.9);
+  }
+  
+  .member-card__name{
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin: 0;
+    color: rgba(255,255,255,0.92);
+  }
+  
+  .member-card__meta{
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.55);
+  }
+  
+
+.scroll-pijl {
+    position: absolute;
+    left: 50%;
+    bottom: clamp(90px, 12vh, 150px);
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+    opacity: 0.85;
+  
+    /* bounce op de hele indicator */
+    animation: scrollBounce 1.8s ease-in-out infinite;
+  }
+  
+  .scroll-pijl span {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 10px;
+  }
+  
+  .scroll-pijl__icoon {
+    width: 14px;
+    height: 14px;
+    border-left: 2px solid rgba(255,120,185,0.7);
+    border-bottom: 2px solid rgba(255,120,185,0.7);
+    transform: rotate(-45deg);
+    margin: 0 auto;
+  }
+  
+  /* keyframes (naam moet exact matchen) */
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(8px); }
+  }
+  
+  /* als iemand reduced motion aan heeft -> geen bounce */
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-pijl { animation: none; }
+  }
+  
+  .archive-section {
+    margin-bottom: 60px;
+  }
+  
+  .archive-title {
+    font-size: 20px;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+    color: rgba(255,255,255,0.85);
+  }
+  
+  .video-row {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+  }
+  
+  .video-row::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .video-row::-webkit-scrollbar-thumb {
+    background: rgba(255,120,185,0.5);
+    border-radius: 10px;
+  }
+  
+  /* ===== Video Modal ===== */
+.video-modal{
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+  }
+  
+  .video-modal.is-open{
+    display: block;
+  }
+  
+  .video-modal__backdrop{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(6px);
+  }
+  
+  .video-modal__panel{
+    position: relative;
+    width: min(1200px, calc(100% - 32px));
+    margin: 40px auto;
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(10,10,12,0.92);
+    border: 1px solid rgba(255,255,255,0.10);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  }
+  
+  .video-modal__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  
+  .video-modal__title{
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.92);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .video-modal__actions{
+    display: flex;
+    gap: 10px;
+  }
+  
+  .video-modal__btn{
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.9);
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-size: 13px;
+  }
+  
+  .video-modal__btn:hover{
+    transform: translateY(-1px);
+    border-color: rgba(255,120,185,0.6);
+    box-shadow: 0 0 25px rgba(255,120,185,0.12);
+  }
+  
+  .video-modal__btn--close{
+    border-color: rgba(255,255,255,0.25);
+  }
+  
+  .video-modal__body{
+    padding: 0;
+  }
+  
+  .video-modal__frameWrap{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+  }
+  
+  .video-modal__frameWrap iframe{
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+  
+  /* Mobile spacing */
+  @media (max-width: 600px){
+    .video-modal__panel{
+      margin: 18px auto;
+    }
+    .video-modal__title{
+      font-size: 14px;
+    }
+    .video-modal__btn{
+      padding: 9px 10px;
+      font-size: 12px;
+    }
+  }
+  
+  .video-modal { display: none; }
+.video-modal.is-open { display: block; }
+

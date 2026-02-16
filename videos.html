@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BORDER: MOONLIGHT · Archive</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="videos.css" />
+</head>
+
+<body class="bm-videos">
+
+  <!-- NAVBAR -->
+  <site-navbar src="navbar.html"></site-navbar>
+
+  <!-- BACKGROUND STARS -->
+  <canvas id="stars-canvas" aria-hidden="true"></canvas>
+
+  <!-- HERO / MEMORY VAULT -->
+  <section class="memory-vault">
+    <div class="vignette-overlay"></div>
+
+    <div class="vault-header">
+      <p class="intro__boventekst">WELCOME TO THE ARCHIVE</p>
+      <h1 class="intro__titel">BORDER: MOONLIGHT</h1>
+
+      <div class="intro__labels">
+        <span class="label">Moonlight Archive</span>
+        <span class="label">Enhypen Collection</span>
+      </div>
+    </div>
+
+    <div class="strip-wrapper">
+      <div class="film-strip scroll-left" id="strip1">
+        <img src="images/memory.gif" class="film-item" alt="Memory gif">
+        <video src="images/memory1.mp4" class="film-item" autoplay muted loop playsinline></video>
+        <video src="images/memory2.mp4" class="film-item" autoplay muted loop playsinline></video>
+      </div>
+
+      <div class="film-strip scroll-right" id="strip2">
+        <video src="images/memory4.mp4" class="film-item" autoplay muted loop playsinline></video>
+        <video src="images/memory3.mp4" class="film-item" autoplay muted loop playsinline></video>
+        <video src="images/memory5.mp4" class="film-item" autoplay muted loop playsinline></video>
+      </div>
+    </div>
+
+    <div class="scroll-pijl">
+      <span>Scroll to enter the archive</span>
+      <div class="scroll-pijl__icoon"></div>
+    </div>
+  </section>
+
+  <!-- ARCHIVE CONTENT -->
+  <section class="bm-library-grid-wrapper">
+
+    <div class="archive-section">
+      <h2 class="archive-title">Music</h2>
+      <div class="video-row" id="musicRow"></div>
+    </div>
+
+    <div class="archive-section">
+      <h2 class="archive-title">Shows & Series</h2>
+      <div class="video-row" id="showsRow"></div>
+    </div>
+
+    <div class="archive-section">
+      <h2 class="archive-title">Comebacks & Performances</h2>
+      <div class="video-row" id="performanceRow"></div>
+    </div>
+
+    <div class="archive-section">
+      <h2 class="archive-title">Universe & Lore</h2>
+      <div class="video-row" id="loreRow"></div>
+    </div>
+
+  </section>
+
+
+  <!-- VIDEO MODAL -->
+  <div class="video-modal" id="videoModal" aria-hidden="true">
+    <div class="video-modal__backdrop" data-close="true"></div>
+
+    <div class="video-modal__panel" role="dialog" aria-modal="true">
+      <div class="video-modal__header">
+        <h3 class="video-modal__title" id="videoModalTitle">
+          Video Title
+        </h3>
+
+        <div class="video-modal__actions">
+          <button class="video-modal__btn" id="modalFullscreen" type="button">
+            ⛶ Fullscreen
+          </button>
+          <button class="video-modal__btn video-modal__btn--close" id="modalClose" type="button">
+            ✕ Close
+          </button>
+        </div>
+      </div>
+
+      <div class="video-modal__body">
+        <div class="video-modal__frameWrap" id="videoFrameWrap">
+          <!-- iframe wordt via JS toegevoegd -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- SCRIPTS -->
+  <script src="navbar.js" type="module"></script>
+  <script src="videos.js"></script>
+
+</body>
+</html>
