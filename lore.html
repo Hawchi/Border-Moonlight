@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  
+  
   <!-- Pink Moon laag achter alles (Chrome-proof) -->
   <div class="maan-achtergrond" aria-hidden="true"></div>
 
@@ -36,24 +39,36 @@
       <div class="glow" aria-hidden="true"></div>
     </section>
 
-    <!-- LAYOUT: ZIJMENU (sticky) + VERHALEN -->
-    <div class="layout">
-      <!-- Zijmenu met fases -->
-      <aside class="zijmenu" aria-label="Hoofdstukken">
-        <h2 class="zijmenu-titel">Phases</h2>
-        <ol class="fases">
-          <li><a href="#fase-1" class="actief">Phase 1 · Awakening</a></li>
-          <li><a href="#fase-2">Phase 2 · The Craving</a></li>
-          <li><a href="#fase-3">Phase 3 · Youth vs Instinct </a></li>
-          <li><a href="#fase-4">Phase 4 · Rebellion</a></li>
-          <li><a href="#fase-5">Phase 5 · Sacrifice and Fate</a></li>
-          <li><a href="#fase-6">Phase 6 · Poison</a></li>
-          <li><a href="#fase-7">Phase 7 · Dark Moon</a></li>
-          <li><a href="#fase-7-5">Phase 7.5 · Webtoon</a></li>
-          <li><a href="#fase-8">Phase 8 · Kisses</a></li>
-          <li><a href="#fase-9">Phase 9 · Desire</a></li>
-        </ol>
-      </aside>
+
+<!-- LAYOUT: ZIJMENU (sticky) + VERHALEN -->
+<div class="layout">
+
+  <!-- Zijmenu -->
+  <aside class="zijmenu" aria-label="Hoofdstukken">
+
+    <button class="fase-toggle" type="button" aria-expanded="false" aria-controls="fase-panel">
+      Phases
+    </button>
+
+    <!-- Desktop lijst (blijft in sidebar zichtbaar) -->
+    <div class="fase-panel-desktop">
+      <h2 class="zijmenu-titel">Phases</h2>
+      <ol class="fases">
+        <li><a href="#fase-1" class="actief">Phase 1 · Awakening</a></li>
+        <li><a href="#fase-2">Phase 2 · The Craving</a></li>
+        <li><a href="#fase-3">Phase 3 · Youth vs Instinct</a></li>
+        <li><a href="#fase-4">Phase 4 · Rebellion</a></li>
+        <li><a href="#fase-5">Phase 5 · Sacrifice and Fate</a></li>
+        <li><a href="#fase-6">Phase 6 · Poison</a></li>
+        <li><a href="#fase-7">Phase 7 · Dark Moon</a></li>
+        <li><a href="#fase-7-5">Phase 7.5 · Webtoon</a></li>
+        <li><a href="#fase-8">Phase 8 · Kisses</a></li>
+        <li><a href="#fase-9">Phase 9 · Desire</a></li>
+      </ol>
+    </div>
+
+</aside>
+
 
       <!-- Verhalen-stroom -->
       <section class="verhalen">
@@ -1882,6 +1897,29 @@
       </section>
     </div>
   </main>
+
+
+<!-- MOBIEL MODAL (MOET buiten main staan) -->
+<div class="fase-overlay" aria-hidden="true"></div>
+
+<div id="fase-panel" class="fase-panel" aria-hidden="true">
+  <h2 class="zijmenu-titel">Phases</h2>
+  <ol class="fases">
+    <li><a href="#fase-1">Phase 1 · Awakening</a></li>
+    <li><a href="#fase-2">Phase 2 · The Craving</a></li>
+    <li><a href="#fase-3">Phase 3 · Youth vs Instinct</a></li>
+    <li><a href="#fase-4">Phase 4 · Rebellion</a></li>
+    <li><a href="#fase-5">Phase 5 · Sacrifice and Fate</a></li>
+    <li><a href="#fase-6">Phase 6 · Poison</a></li>
+    <li><a href="#fase-7">Phase 7 · Dark Moon</a></li>
+    <li><a href="#fase-7-5">Phase 7.5 · Webtoon</a></li>
+    <li><a href="#fase-8">Phase 8 · Kisses</a></li>
+    <li><a href="#fase-9">Phase 9 · Desire</a></li>
+  </ol>
+</div>
+
+
+
 
   <footer class="voet">
     <div class="inhoud">
